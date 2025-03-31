@@ -1,0 +1,130 @@
+/*nav-bar head*/
+body::before{
+    display:block;
+    content: "";
+    height:60px;
+}
+/* Smooth Dropdown Animation */
+.dropdown-menu {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, visibility 0.3s;
+}
+
+/* Show dropdown on hover for desktops (≥992px) */
+@media (min-width: 992px) {
+    .nav-item.dropdown:hover .dropdown-menu {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+}
+
+/* Ensure dropdown works properly on mobile */
+@media (max-width: 991px) {
+    .dropdown.show .dropdown-menu {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+}
+
+/* Proper alignment of dropdown arrow */
+.navbar-nav .dropdown-toggle::after {
+    content: "\f107"; /* Unicode for FontAwesome down arrow */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-left: 3px;
+    border: none !important; /* Remove Bootstrap default caret */
+}
+
+/* Dropdown Styles */
+.dropdown-menu {
+    border-radius: 8px;
+    background-color: #f3ebeb; /* Dark background */
+    padding: 10px 0; /* Adds space around items */
+}
+
+/* Dropdown Link Styling */
+.dropdown-menu a {
+    padding: 12px 20px;
+    color: whitesmoke;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    line-height: 1.5;
+    display: block;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.dropdown-menu a:hover {
+    background-color: #444; /* Slight background change on hover */
+    border-radius: 5px; /* Smooth hover effect */
+}
+/* Dark Mode */
+.dark-theme {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+/* Navbar Fix */
+.dark-theme .navbar {
+    background-color: #222;
+}
+
+/* Dropdown Fix */
+.dark-theme .dropdown-menu {
+    background-color: #333;
+}
+/* Enhanced Button */
+.btn-primary {
+    background: linear-gradient(90deg, #007bff, #0056b3);
+    border-radius: 20px;
+    padding: 12px 24px;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgba(0, 91, 187, 0.5);
+}
+
+/* Heading Styles */
+.hero-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.highlight-text {
+    color: #ffcc00; /* Yellow for emphasis */
+}
+
+/* Paragraph Readability */
+.hero-text {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    max-width: 600px;
+}
+/*card spacing*/
+.card{
+    margin-bottom: 20px;
+}
+/* Main Card Style */
+.card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(12, 12, 12, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect */
+.card:hover {
+    transform: translateY(-5px); /* Slight lift effect */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+}
+
