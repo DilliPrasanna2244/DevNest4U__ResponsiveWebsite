@@ -11,248 +11,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
-    <style>
-         /* Search Bar Styling */
-      .search-container {
-          position: relative;
-          width: 230px;
-      }
-      .search-bar {
-         border-radius: 40px;
-         padding-left: 40px;
-        }
-        .search-icon {
-          position: absolute;
-          left: 10px;
-          top: 50%;
-          transform: translateY(-50%);
-          color: gray;
-      }
-        .search-bar:focus {
-        outline: none !important;
-        box-shadow: none !important;
-      }
-          /* Slide Animation for Buttons */
-        .auth-buttons a {
-        position: relative;
-        overflow: hidden;
-        transition: all 0.4s ease-in-out;
-        }
-
-        /* Slide Effect on Hover */
-        .auth-buttons a::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(255, 255, 255, 0.2);
-            transition: left 0.4s ease-in-out;
-        }
-
-        .auth-buttons a:hover::before {
-            left: 0;
-        }
-        /* Navbar Hover Effect */
-        .navbar-nav a {
-        color: #fff;
-        transition: color 0.3s ease-in-out;
-        }
-
-        .navbar-nav a:hover {
-        color: #161613; /* Yellow on hover */
-        }
-
-      /* Navbar Hover Effect */
-      .navbar-nav .nav-link {
-      position: relative;
-      color: rgb(252, 248, 248);
-      font-weight: bold;
-      transition: color 0.3s ease-in-out;
-      }
-
-      .navbar-nav .nav-link:hover {
-      color: #b977d3; /* Change to a color on hover */
-      }
-
-      /* Underline Effect on Hover */
-      .navbar-nav .nav-link::after {
-        content: "";
-        position: absolute;
-        left: 50%;
-        bottom: -5px;
-        width: 0;
-        height: 2px;
-        background-color: #916cc0;
-        transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
-        }
-
-      .navbar-nav .nav-link:hover::after {
-      width: 100%;
-      left: 0;
-      }
-      
-      /*modal width*/
-      .modal-dialog{
-        max-width:390px;
-      }
-       /* Modal Background Blur Effect */
-       .modal-backdrop {
-            backdrop-filter: blur(10px);
-            background-color: rgb(20, 18, 22)!important;
-            position: fixed;
-        }
-        /* Flip Animation for Login/Signup */
-        .auth-container {
-            perspective: 1000px;
-            color:black;
-        }
-        .modal-content{
-            background: transparent!important;
-            box-shadow: none;
-            border:none;
-        }
-        .auth-box {
-            width: 350px;
-            height: 400px;
-            transition: transform 1.5s;
-            transform-style: preserve-3d;
-            position: relative;
-            background: transparent!important;
-            box-shadow: none;
-
-        }
-        .auth-box .auth-panel {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        .auth-box .login-panel {
-            background: linear-gradient(135deg, #0f0f0f, #282b2c);
-            color: rgb(243, 241, 243);
-        }
-        .auth-box .signup-panel {
-            transform: rotateY(180deg);
-            background: linear-gradient(135deg, #272627, #0e0d0d);
-            color: rgb(241, 238, 241);
-        }
-        .auth-container.flipped .auth-box {
-            transform: rotateY(180deg);
-        }
-        /* switch settings */
-
-        .ui-switch {
-        /* switch */
-        --switch-bg: white;
-        --switch-width: 48px;
-        --switch-height: 20px;
-        /* circle */
-        --circle-diameter: 32px;
-        --circle-bg: grey;
-        --circle-inset: calc((var(--circle-diameter) - var(--switch-height)) / 2);
-        }
-
-        .ui-switch input {
-        display: none;
-        }
-
-        .slider {
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-        width: var(--switch-width);
-        height: var(--switch-height);
-        background: var(--switch-bg);
-        border-radius: 999px;
-        position: relative;
-        cursor: pointer;
-        }
-
-        .slider .circle {
-        top: calc(var(--circle-inset) * -1);
-        left: 0;
-        width: var(--circle-diameter);
-        height: var(--circle-diameter);
-        position: absolute;
-        background: var(--circle-bg);
-        border-radius: inherit;
-        background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjAiIHdpZHRoPSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj4KICAgIDxwYXRoIGZpbGw9IiNmZmYiCiAgICAgICAgZD0iTTkuMzA1IDEuNjY3VjMuNzVoMS4zODlWMS42NjdoLTEuMzl6bS00LjcwNyAxLjk1bC0uOTgyLjk4Mkw1LjA5IDYuMDcybC45ODItLjk4Mi0xLjQ3My0xLjQ3M3ptMTAuODAyIDBMMTMuOTI3IDUuMDlsLjk4Mi45ODIgMS40NzMtMS40NzMtLjk4Mi0uOTgyek0xMCA1LjEzOWE0Ljg3MiA0Ljg3MiAwIDAwLTQuODYyIDQuODZBNC44NzIgNC44NzIgMCAwMDEwIDE0Ljg2MiA0Ljg3MiA0Ljg3MiAwIDAwMTQuODYgMTAgNC44NzIgNC44NzIgMCAwMDEwIDUuMTM5em0wIDEuMzg5QTMuNDYyIDMuNDYyIDAgMDExMy40NzEgMTBhMy40NjIgMy40NjIgMCAwMS0zLjQ3MyAzLjQ3MkEzLjQ2MiAzLjQ2MiAwIDAxNi41MjcgMTAgMy40NjIgMy40NjIgMCAwMTEwIDYuNTI4ek0xLjY2NSA5LjMwNXYxLjM5aDIuMDgzdi0xLjM5SDEuNjY2em0xNC41ODMgMHYxLjM5aDIuMDg0di0xLjM5aC0yLjA4NHpNNS4wOSAxMy45MjhMMy42MTYgMTUuNGwuOTgyLjk4MiAxLjQ3My0xLjQ3My0uOTgyLS45ODJ6bTkuODIgMGwtLjk4Mi45ODIgMS40NzMgMS40NzMuOTgyLS45ODItMS40NzMtMS40NzN6TTkuMzA1IDE2LjI1djIuMDgzaDEuMzg5VjE2LjI1aC0xLjM5eiIgLz4KPC9zdmc+");
-        background-repeat: no-repeat;
-        background-position: center center;
-        -webkit-transition: left 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, -webkit-transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-        -o-transition: left 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-        transition: left 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, -webkit-transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12);
-        ;
-        }
-
-        .slider .circle::before {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background: rgba(255, 255, 255, 0.75);
-        border-radius: inherit;
-        -webkit-transition: all 500ms;
-        -o-transition: all 500ms;
-        transition: all 500ms;
-        opacity: 0;
-        }
-
-        /* actions */
-
-        .ui-switch input:checked+.slider .circle {
-        left: calc(100% - var(--circle-diameter));
-        background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjAiIHdpZHRoPSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj4KICAgIDxwYXRoIGZpbGw9IiNmZmYiCiAgICAgICAgZD0iTTQuMiAyLjVsLS43IDEuOC0xLjguNyAxLjguNy43IDEuOC42LTEuOEw2LjcgNWwtMS45LS43LS42LTEuOHptMTUgOC4zYTYuNyA2LjcgMCAxMS02LjYtNi42IDUuOCA1LjggMCAwMDYuNiA2LjZ6IiAvPgo8L3N2Zz4=");
-        }
-
-        .ui-switch input:active+.slider .circle::before {
-        -webkit-transition: 0s;
-        -o-transition: 0s;
-        transition: 0s;
-        opacity: 1;
-        width: 0;
-        height: 0;
-        }
-        /*card hover effect*/
-        .hover-card {
-            display: none;
-            position: absolute;
-            top: 100%; /* Position below the main card */
-            left: 50%;
-            transform: translateX(-50%);
-            width: 90%; /* Adjust width */
-            background: white;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-            pointer-events: none; /* Prevent flickering */
-            z-index: 1000;
-        }
-        .card-wrapper {
-            position: relative;
-            display: inline-block;
-        }
-    </style>
 </head>
 <body>
     <!--Navbar-->
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top py-4">
       <div class="container">
-        <a href="#" class="navbar-brand" style="font-size:25px"><strong>DevNest4U</strong></a>
+        <a href="index.html" class="navbar-brand" style="font-size:25px"><strong>DevNest4U</strong></a>
         <button 
             class="navbar-toggler" 
             type="button" 
@@ -260,29 +24,41 @@
             data-bs-target="#navmenu">
             <span class="navbar-toggler-icon"></span>
         </button>
+        <header>
         <div class="collapse navbar-collapse" id="navmenu">
             <ul class="navbar-nav ms-5">
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="#" data-bs-toggle="tooltip bottom" title="Explore our page Now!">Home</a>
+                    <a class="nav-link text-white" href="index.html" data-bs-toggle="tooltip bottom" title="Explore our page Now!">Home</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                      Courses
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="CoursesDropdown">
-                        <li><a href="#" class="dropdown-item">Web Development</a></li>
-                        <li><a href="#" class="dropdown-item">Python</a></li>
-                        <li><a href="#" class="dropdown-item">UI/UX</a></li>
-                        <li><a href="#" class="dropdown-item">Deployment</a></li>
+                    <ul class="dropdown-menu p-3" style="width: 500px;">
+                        <div class="row">
+                            <div class="col-6">
+                                <li><a href="Web Development.html" class="dropdown-item">Web Development</a></li>
+                                <li><a href="Python Development.html" class="dropdown-item">Python Development</a></li>
+                                <li><a href="UI_UX design.html" class="dropdown-item">UI/UX Design</a></li>
+                                <li><a href="Database Management.html" class="dropdown-item">Database Management</a></li>
+                                <li><a href="Authentication&Security.html" class="dropdown-item">Authentication & Security</a></li>
+                            </div>
+                            <div class="col-6">
+                                <li><a href="API Development.html" class="dropdown-item">API Development</a></li>
+                                <li><a href="Deployment&Hosting.html" class="dropdown-item">Deployment & Hosting</a></li>
+                                <li><a href="VersionControl.html" class="dropdown-item">Version Control</a></li>
+                            </div>
+                        </div>
                     </ul>
                 </li>                
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="#" data-bs-toggle="tooltip bottom" title="You can find few tips and suggestions here">For More</a>
+                    <a class="nav-link text-white" href="For More.html" data-bs-toggle="tooltip bottom" title="You can find few tips and suggestions here">For More</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="#" data-bs-toggle="tooltip bottom" title="Know About-Us">About-Us</a>
+                    <a class="nav-link text-white" href="About-Us.html" data-bs-toggle="tooltip bottom" title="Know About-Us">About-Us</a>
                 </li>
             </ul>
+        </header>
             <!--Toggle Theme-->
             <label class="ui-switch ms-5">
                 <input type="checkbox" id="themeToggle">
@@ -544,28 +320,14 @@
             </div>
         </div>
     </section>
-
-    <!--Footer
-    <footer class="p-5 bg-dark text-white text-center position-relative">
-        <p class="lead">&copy; 2025 DevNest4U. Created as part of an internship project.</p>
-        <a href="#" class="position-absolute bottom-0 end-0 p-5">
-            <i class="bi bi-arrow-up-circle h1"></i> 
-        </a>
-    </footer> -->
     
-    <!-- Footer -->
-<footer class="p-4 bg-dark text-white text-center position-relative">
-    <div class="container">
-        <p class="lead mb-2">&copy; 2025 DevNest4U. Created as part of an internship project.</p>
-        <p class="small text-secondary">Designed with ❤️ for web developers.</p>
-    </div>
+    <!-- Footer will be inserted here -->
+    <div id="footer"></div>
 
-    <!-- Back to Top Button with Tooltip -->
-    <a href="#" class="position-absolute bottom-0 end-0 p-4" data-bs-toggle="tooltip" data-bs-placement="top" title="Back to Top">
-        <i class="bi bi-arrow-up-circle h1 text-light"></i>
-    </a>
-</footer>
-     <!-- Bootstrap JS Bundle (Includes Popper.js) -->
+    <!-- Include footer script.js -->
+    <script src="script.js"></script>
+    
+        <!-- Bootstrap JS Bundle (Includes Popper.js) -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 

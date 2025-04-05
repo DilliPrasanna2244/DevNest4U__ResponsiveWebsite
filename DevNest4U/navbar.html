@@ -1,0 +1,71 @@
+<link rel="stylesheet" href="styles.css">
+<!--Navbar-->
+ <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top py-4">
+    <div class="container">
+      <a href="index.html" class="navbar-brand" style="font-size:25px"><strong>DevNest4U</strong></a>
+      <button 
+          class="navbar-toggler" 
+          type="button" 
+          data-bs-toggle="collapse" 
+          data-bs-target="#navmenu">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <header>
+      <div class="collapse navbar-collapse" id="navmenu">
+          <ul class="navbar-nav ms-5">
+              <li class="nav-item">
+                  <a class="nav-link text-white" href="index.html" data-bs-toggle="tooltip bottom" title="Explore our page Now!">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                   Courses
+                  </a>
+                  <ul class="dropdown-menu p-3" style="width: 500px;">
+                      <div class="row">
+                          <div class="col-6">
+                              <li><a href="Web Development.html" class="dropdown-item">Web Development</a></li>
+                              <li><a href="Python Development.html" class="dropdown-item">Python Development</a></li>
+                              <li><a href="UI_UX design.html" class="dropdown-item">UI/UX Design</a></li>
+                              <li><a href="Database Management.html" class="dropdown-item">Database Management</a></li>
+                              <li><a href="Authentication&Security.html" class="dropdown-item">Authentication & Security</a></li>
+                          </div>
+                          <div class="col-6">
+                              <li><a href="API Development.html" class="dropdown-item">API Development</a></li>
+                              <li><a href="Deployment&Hosting.html" class="dropdown-item">Deployment & Hosting</a></li>
+                              <li><a href="VersionControl.html" class="dropdown-item">Version Control</a></li>
+                          </div>
+                      </div>
+                  </ul>
+              </li>                
+              <li class="nav-item">
+                  <a class="nav-link text-white" href="For More.html" data-bs-toggle="tooltip bottom" title="You can find few tips and suggestions here">For More</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link text-white" href="About-Us.html" data-bs-toggle="tooltip bottom" title="Know About-Us">About-Us</a>
+              </li>
+          </ul>
+      </header>
+          <!--Toggle Theme-->
+          <label class="ui-switch ms-5">
+              <input type="checkbox" id="themeToggle">
+              <div class="slider">
+                  <div class="circle"></div>
+              </div>
+          </label>
+          <!-- Search Bar with Icon Inside -->
+          <form class="d-flex ms-auto">
+              <div class="search-container">
+                  <i class="fas fa-search search-icon"></i>
+                  <input class="form-control search-bar" type="search" placeholder="Search..." aria-label="Search">
+              </div>
+          </form>
+          <!-- Auth Buttons -->
+          <div class="ms-4 auth-buttons">
+              <a href="index.html" class="btn btn-success rounded-pill px-4" onclick="toggleAuth()">Sign Up</a>
+              <a href="index.html" class="btn btn-outline-light rounded-pill px-4" onclick="toggleAuth()">Log in</a>
+          </div>
+      </div>
+  </div>
+  </nav>
+  <!-- Custom JS -->
+  <script src="script.js"></script>
