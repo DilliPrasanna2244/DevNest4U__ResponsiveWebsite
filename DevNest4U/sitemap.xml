@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://devnest4u.netlify.app/</loc>
+  <lastmod>2025-04-25T01:32:23+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://devnest4u.netlify.app/web%20development</loc>
+  <lastmod>2025-04-25T01:32:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://devnest4u.netlify.app/python%20development</loc>
+  <lastmod>2025-04-25T01:32:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://devnest4u.netlify.app/ui_ux%20design</loc>
+  <lastmod>2025-04-25T01:32:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://devnest4u.netlify.app/database%20management</loc>
+  <lastmod>2025-04-25T01:32:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://devnest4u.netlify.app/authentication&amp;security</loc>
+  <lastmod>2025-04-25T01:32:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://devnest4u.netlify.app/api%20development</loc>
+  <lastmod>2025-04-25T01:32:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://devnest4u.netlify.app/deployment&amp;hosting</loc>
+  <lastmod>2025-04-25T01:32:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://devnest4u.netlify.app/versioncontrol</loc>
+  <lastmod>2025-04-25T01:32:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://devnest4u.netlify.app/for%20more</loc>
+  <lastmod>2025-04-25T01:32:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://devnest4u.netlify.app/about-us</loc>
+  <lastmod>2025-04-25T01:32:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://devnest4u.netlify.app/explore-courses</loc>
+  <lastmod>2025-04-25T01:32:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
+
+</urlset>

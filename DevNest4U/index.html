@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- google console verification -->
+    <meta name="google-site-verification" content="JGCvcWONhlKhgByKY74OGO1ZHITkA8oRn3qIvCih0V8" />
     <title>Responsive_website</title>
      <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -11,77 +13,92 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
+    <!-- Standard Favicon -->
+    <link rel="icon" type="image/png" href="favicon/favicon.ico">
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+
+    <!-- Web App Manifest (Optional) -->
+    <link rel="manifest" href="favicon/site.webmanifest">
+    
+    <!-- AOS Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
+   <style>
+    /* Loader Fullscreen Style */
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, #0f0f0f 60%, #000000);
+  backdrop-filter: blur(5px);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+/* Logo Styling with Glow */
+.loader-logo {
+  width: 110px;
+  height: 110px;
+  border-radius: 999px;
+  object-fit: cover;
+  box-shadow: 0 0 20px #00ffc8, 0 0 40px #00ffc8;
+  animation: pulse 2s infinite ease-in-out;
+  margin-bottom: 20px;
+}
+
+/* Typing Text with Animation */
+.typing-text {
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #00ffc8;
+  font-family: 'Courier New', monospace;
+  font-size: 1.2rem;
+  color: #ffffff;
+  max-width: 90vw;
+}
+
+.typing-text-wrapper {
+  min-height: 40px;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 20px #00ffc8; }
+  50% { box-shadow: 0 0 40px #00ffc8; }
+  100% { box-shadow: 0 0 20px #9079aa; }
+}
+
+</style>  
 </head>
 <body>
-    <!--Navbar-->
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top py-4">
-      <div class="container">
-        <a href="index.html" class="navbar-brand" style="font-size:25px"><strong>DevNest4U</strong></a>
-        <button 
-            class="navbar-toggler" 
-            type="button" 
-            data-bs-toggle="collapse" 
-            data-bs-target="#navmenu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <header>
-        <div class="collapse navbar-collapse" id="navmenu">
-            <ul class="navbar-nav ms-5">
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="index.html" data-bs-toggle="tooltip bottom" title="Explore our page Now!">Home</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                     Courses
-                    </a>
-                    <ul class="dropdown-menu p-3" style="width: 500px;">
-                        <div class="row">
-                            <div class="col-6">
-                                <li><a href="Web Development.html" class="dropdown-item">Web Development</a></li>
-                                <li><a href="Python Development.html" class="dropdown-item">Python Development</a></li>
-                                <li><a href="UI_UX design.html" class="dropdown-item">UI/UX Design</a></li>
-                                <li><a href="Database Management.html" class="dropdown-item">Database Management</a></li>
-                                <li><a href="Authentication&Security.html" class="dropdown-item">Authentication & Security</a></li>
-                            </div>
-                            <div class="col-6">
-                                <li><a href="API Development.html" class="dropdown-item">API Development</a></li>
-                                <li><a href="Deployment&Hosting.html" class="dropdown-item">Deployment & Hosting</a></li>
-                                <li><a href="VersionControl.html" class="dropdown-item">Version Control</a></li>
-                            </div>
-                        </div>
-                    </ul>
-                </li>                
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="For More.html" data-bs-toggle="tooltip bottom" title="You can find few tips and suggestions here">For More</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="About-Us.html" data-bs-toggle="tooltip bottom" title="Know About-Us">About-Us</a>
-                </li>
-            </ul>
-        </header>
-            <!--Toggle Theme-->
-            <label class="ui-switch ms-5">
-                <input type="checkbox" id="themeToggle">
-                <div class="slider">
-                    <div class="circle"></div>
-                </div>
-            </label>
-            <!-- Search Bar with Icon Inside -->
-            <form class="d-flex ms-auto">
-                <div class="search-container">
-                    <i class="fas fa-search search-icon"></i>
-                    <input class="form-control search-bar" type="search" placeholder="Search..." aria-label="Search">
-                </div>
-            </form>
-            <!-- Auth Buttons -->
-            <div class="ms-4 auth-buttons">
-                <a href="#" class="btn btn-success rounded-pill px-4" onclick="toggleAuth()">Sign Up</a>
-                <a href="#" class="btn btn-outline-light rounded-pill px-4" onclick="toggleAuth()">Log in</a>
-            </div>
-        </div>
+  
+  <!-- 🔄 Loading Screen -->
+  <div id="loading-screen">
+    <div class="loader-content text-center">
+      <img src="images/loadingScreen.png" alt="DevNest4U Logo" class="loader-logo">
+      <div style="min-height: 40px;">
+        <p class="typing-text mb-0" id="typing-text"></p>
+      </div>
+      <div class="typing-text-wrapper">
+        <p class="typing-text mb-0" id="typing-text"></p>
+      </div>      
     </div>
-    </nav>
+  </div>
+  
+  
 
+    <!--Navbar-->
+    <!-- <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top py-4"> -->
+      <div id="navbar"></div>
+    
     <!--Show case-->
     <section class="bg-dark text-light p-5 text-center text-sm-start">
         <div class="container">
@@ -92,46 +109,74 @@
                     <p class="lead my-4 hero-text"><b>
                         DevNest4U is your ultimate learning hub, offering free, high-quality resources to help you master in-demand skills. Whether you're a beginner or an aspiring pro, our expertly curated content will guide you on the right path. Start your journey today and take a step toward a brighter future! </b> </p>
                     <div class="text-center">
-                        <button class="btn btn-primary btn-lg">Explore Courses</button>
+                        <a href="explore-courses.html" class="btn btn-primary btn-lg center">Explore Courses</a>
+
                     </div>
                 </div>
                 <img class="img-fluid w-50 d-none d-sm-block" src="SVG/tech.svg" alt="img">
             </div>
 
         </div>
-        <h6 class="text-center"><span class="highlight-text"> NOTE : </span> "Enjoy a better experienc in Dark Mode!!!"</h6>
+        <h6 class="text-center py-5"><span class="highlight-text"> NOTE : </span> "Enjoy a better experiene in Dark Mode!!!"</h6>
 
     </section>
-    <!-- Authentication Modal -->
-    <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" style="display: none;" >
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-body text-center">
-                    <div class="auth-container" id="authContainer">
-                        <div class="auth-box" id="authBox">
-                            <!-- Login Form -->
-                            <div class="auth-panel login-panel">
-                                <h4>Login</h4>
-                                <input type="email" class="form-control mb-2" placeholder="Email" required>
-                                <input type="password" class="form-control mb-2" placeholder="Password" required>
-                                <button class="btn btn-success w-100">Log In</button>
-                                <p class="mt-2">Don't have an account? <a href="#" onclick="flipAuth(event)">Sign Up</a></p>
-                            </div>
-                            <!-- Signup Form -->
-                            <div class="auth-panel signup-panel">
-                                <h4>Sign Up</h4>
-                                <input type="Name" class="form-control mb-2" placeholder="Name" required>
-                                <input type="email" class="form-control mb-2" placeholder="Email" required>
-                                <input type="password" class="form-control mb-2" placeholder="Password" required>
-                                <button class="btn btn-success w-100">Sign Up</button>
-                                <p class="mt-2">Already have an account? <a href="#" onclick="flipAuth(event)">Log In</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+    <!-- Trigger Button
+<button class="btn btn-primary" onclick="toggleAuth()">Login / Signup</button> -->
+
+<!-- Authentication Modal -->
+<div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-transparent border-0">
+      <div class="modal-body">
+        <div class="auth-container" id="authContainer">
+          <div class="auth-box" id="authBox">
+
+            <!-- Login Panel -->
+            <div class="auth-panel login-panel" data-aos="zoom-in" data-aos-duration="1000">
+              <h4 class="text-center py-3">Login</h4>
+              <input type="email" class="form-control mb-2" id="login-email" placeholder="Email" required>
+              <div class="input-group mb-2">
+                <input type="password" class="form-control" id="login-password" placeholder="Password" required>
+                <span class="input-group-text" onclick="togglePassword('login-password')">
+                  <i class="bi bi-eye-fill"></i>
+                </span>
+              </div>
+              <button class="btn btn-success w-100" onclick="loginUser()">Log In</button>
+              <p class="mt-2 text-info">Don't have an account? <a href="#" onclick="flipAuth(event)">Sign Up</a></p>              
+              <button id="googleSignInBtn" class="btn btn-light w-100 mt-2 d-flex align-items-center justify-content-center">
+                <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google Icon" style="width:20px; height:20px; margin-right: 10px;">
+                Continue with Google
+              </button>
+              <p class="text-center gap-4"><strong>Login to retrieve full content and enjoy exclusive features 🚀</strong></p>
+              <p class="text-primary small text-center">* We value your privacy and security *</p>
             </div>
+            
+          
+
+            <!-- Signup Panel -->
+            <div class="auth-panel signup-panel">
+              <h4 class="text-center py-3">Sign Up</h4>
+              <input type="text" class="form-control mb-2" id="signup-name" placeholder="Name" required>
+              <input type="email" class="form-control mb-2" id="signup-email" placeholder="Email" required>
+              <div class="input-group mb-2">
+                <input type="password" class="form-control" id="signup-password" placeholder="Password" required>
+                <span class="input-group-text" onclick="togglePassword('signup-password')">
+                  <i class="bi bi-eye-fill"></i>
+                </span>
+              </div>
+              <button class="btn btn-success w-100" onclick="signupUser()">Sign Up</button>
+              <p class="mt-2 text-info">Already have an account? <a href="#" onclick="flipAuth(event)">Log In</a></p>
+            </div>
+
+          </div>
         </div>
+      </div>
     </div>
+  </div>
+</div>
+
+  
     <!--Boxes(bootstrap cards)-->
     <section class="p-5">
         <h1 class="text-center">EXPLORE OUR COURSES</h1>
@@ -158,7 +203,7 @@
                             <i class="bi bi-file-code display-1 text-light"></i>
                             <h5 class="card-title mt-3"><b>Python Development</b></h5>
                             <p class="card-text">Build scalable web applications using Python with Django and Flask. Create robust backends, manage databases, and develop powerful APIs.</p>
-                            <a href="#" class="btn btn-primary">Start Learning Now!</a>
+                            <a href="Python Development.html" class="btn btn-primary">Start Learning Now!</a>
                         </div>
                     </div>
                 </div>
@@ -178,7 +223,7 @@
                             <i class="bi bi-palette display-1 text-light"></i>
                             <h5 class="card-title mt-3"><b>UI/UX Design</b></h5>
                             <p class="card-text">Design stunning user interfaces and enhance user experiences using Figma and Adobe XD. Learn to create wireframes, prototypes, and interactive designs.</p>
-                            <a href="#" class="btn btn-primary">Start Learning Now!</a>
+                            <a href="UI_UX design.html" class="btn btn-primary">Start Learning Now!</a>
                         </div>
                     </div>
                 </div>
@@ -189,7 +234,7 @@
                             <i class="bi bi-database display-1 text-light"></i>
                             <h5 class="card-title mt-3"><b>Database Management</b></h5>
                             <p class="card-text">Manage structured data with SQL databases like MySQL & PostgreSQL, or use NoSQL solutions like MongoDB for flexible, JSON-like storage and scalability.</p>
-                            <a href="#" class="btn btn-primary">Start Learning Now!</a>
+                            <a href="Database Management.html" class="btn btn-primary">Start Learning Now!</a>
                         </div>
                     </div>
                 </div>
@@ -199,7 +244,7 @@
                             <i class="bi bi-shield-lock display-1 text-light"></i>
                             <h5 class="card-title mt-3"><b>Authentication & Security</b></h5>
                             <p class="card-text">Secure your applications with JWT for token-based authentication and Firebase Authentication for quick and scalable user management.</p>
-                            <a href="#" class="btn btn-primary">Start Learning Now!</a>
+                            <a href="Authentication&Security.html" class="btn btn-primary">Start Learning Now!</a>
                         </div>
                     </div>
                 </div>
@@ -209,30 +254,32 @@
                             <i class="bi bi-cloud-upload display-1 text-light"></i>
                             <h5 class="card-title mt-3"><b>API Development</b></h5>
                             <p class="card-text">Build scalable web services using REST APIs. Enable seamless communication between frontend and backend applications with secure and efficient endpoints.</p>
-                            <a href="#" class="btn btn-primary">Start Learning Now!</a>
+                            <a href="API Development.html" class="btn btn-primary">Start Learning Now!</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="d-flex justify-content-center flex-wrap gap-4">
+                <div class="col-md-4 align-items-center">
                     <div class="card bg-dark text-light text-center">
                         <div class="card-body">
                             <i class="bi bi-cloud-check display-1 text-light"></i>
                             <h5 class="card-title mt-3"><b>Deployment & Hosting</b></h5>
                             <p class="card-text">Deploy web apps effortlessly using Vercel & Netlify for frontend, AWS for backend, Firebase for serverless apps,Ensure smooth CI/CD workflows and containerize with Docker & Kubernetes.</p>
-                            <a href="#" class="btn btn-primary">Start Learning Now!</a>
+                            <a href="Deployment&Hosting.html" class="btn btn-primary">Start Learning Now!</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 align-items-center">
                     <div class="card bg-dark text-light text-center">
                         <div class="card-body">
                             <i class="bi bi-git display-1 text-light"></i>
                             <h5 class="card-title mt-3"><b>Version Control (Git & GitHub)</b></h5>
                             <p class="card-text">Manage code efficiently with Git, collaborate seamlessly using GitHub, and showcase projects for employers or LinkedIn. Enable smooth deployments and track changes effortlessly.</p>
-                            <a href="#" class="btn btn-primary">Start Learning Now!</a>
+                            <a href="VersionControl.html" class="btn btn-primary">Start Learning Now!</a>
                         </div>
                     </div>
-                </div>              
+                </div>    
+                </div>          
             </div>
         </div>
     </section>
@@ -273,7 +320,7 @@
                 Improve your coding skills while playing fun and interactive games.  
                 <p>(Example:CodeCombat, CodinGame, Flexbox Froggy, CSS Diner.)</p>   
             </p>
-                <a href="#" class="btn btn-light mt-3">
+                <a href="For More.html" class="btn btn-dark border-secondary mt-3">
                 <i class="bi bi-chevron-right"></i> Read More
                 </a>   
             </div>
@@ -319,23 +366,204 @@
             </div>
             </div>
         </div>
-    </section>
+        </section>
+      </div>
     
-    <!-- Footer will be inserted here -->
-    <div id="footer"></div>
+        <!-- Footer will be inserted here -->
+        <div id="footer"></div>
 
-    <!-- Include footer script.js -->
-    <script src="script.js"></script>
-    
-        <!-- Bootstrap JS Bundle (Includes Popper.js) -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+        <!-- Bootstrap JS Bundle -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- jQuery (Remove if not needed) 
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>-->
-    
-    <!-- Custom JS -->
-    <script src="script.js"></script>
+        <!-- Your Custom JavaScript -->
+        <script src="js/script.js"></script>
+
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+          AOS.init();
+        </script>
+
+      <!-- Firebase SDK (Modular - Works with Netlify) -->
+<!-- Firebase Auth + Modal Logic Script -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
+  import {
+    getAuth,
+    onAuthStateChanged,
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    GoogleAuthProvider,
+    signInWithPopup,
+    signOut
+  } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyCtM7_uc89UdDIpyl5_9tzNudx8nJKQWk0",
+    authDomain: "devnest4u.firebaseapp.com",
+    projectId: "devnest4u",
+    storageBucket: "devnest4u.appspot.com",
+    messagingSenderId: "963414297983",
+    appId: "1:963414297983:web:3ddFb8a6955b2c877311e4a",
+    measurementId: "G-XRZRZKZTFP"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth();
+
+  // Signup
+  window.signupUser = function () {
+    const email = document.getElementById("signup-email").value;
+    const password = document.getElementById("signup-password").value;
+
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        alert("Signup successful!");
+        console.log(userCredential.user);
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
+  };
+
+  // Login
+  window.loginUser = function () {
+    const email = document.getElementById("login-email").value;
+    const password = document.getElementById("login-password").value;
+
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        alert("Login successful!");
+        console.log(userCredential.user);
+
+        // Close the modal
+        const modal = document.querySelector(".auth-box");
+        if (modal) {
+          modal.style.display = 'none';
+        }
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
+  };
+
+  // Google Login
+  document.getElementById("googleSignInBtn").addEventListener("click", () => {
+    const provider = new GoogleAuthProvider();
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        alert("Google login successful!");
+        console.log(result.user);
+      })
+      .catch((error) => {
+        console.error(error);
+        alert(error.message);
+      });
+  });
+
+  // Auth state listener
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      console.log("Logged in:", user.email);
+    } else {
+      console.log("No user logged in.");
+    }
+  });
+
+  // Logout
+  window.logoutUser = function () {
+    signOut(auth).then(() => alert("Logged out!"));
+  };
+</script>
+
+<!-- Modal UI Functions -->
+<script>
+  function toggleAuth() {
+    const modalElement = document.getElementById('authModal');
+    const modal = new bootstrap.Modal(modalElement);
+    modal.show();
+  }
+  // Close Bootstrap Modal after login/signup
+const authModal = bootstrap.Modal.getInstance(document.getElementById('authModal'));
+if (authModal) {
+  authModal.hide();
+}
+
+  function togglePassword(id) {
+    const input = document.getElementById(id);
+    const icon = input.nextElementSibling.querySelector("i");
+    if (input.type === "password") {
+      input.type = "text";
+      icon.classList.remove("bi-eye-fill");
+      icon.classList.add("bi-eye-slash-fill");
+    } else {
+      input.type = "password";
+      icon.classList.remove("bi-eye-slash-fill");
+      icon.classList.add("bi-eye-fill");
+    }
+  }
+
+  function flipAuth(event) {
+    event.preventDefault();
+    document.getElementById("authContainer").classList.toggle("flipped");
+  }
+</script>
+
+<!-- Typing Loader Effect -->
+<script>
+  const messages = [
+    "Loading... Because even code needs a coffee break ☕💻",
+    "Decrypting DevNest4U secrets... 🪫💻",
+    "Summoning pixels from the dark web 🧙‍♂️✨",
+    "Polishing the navbar... Just a sec 🪼🖥️",
+    "Feeding bugs to the debugger 🐛➞️💥",
+    "Injecting awesomeness into DevNest4U 🚀🎉"
+  ];
+
+  const textElement = document.getElementById("typing-text");
+  const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+  let charIndex = 0;
+
+  function typeText() {
+    if (charIndex < randomMessage.length) {
+      textElement.innerHTML += randomMessage.charAt(charIndex);
+      charIndex++;
+      setTimeout(typeText, 50);
+    }
+  }
+
+  window.addEventListener("load", () => {
+    typeText();
+    setTimeout(() => {
+      const loader = document.getElementById("loading-screen");
+      loader.style.opacity = "0";
+      setTimeout(() => {
+        loader.style.display = "none";
+      }, 500); // Wait for opacity transition to finish
+    }, 3000);
+});
+
+</script>
+<script>
+  // Scroll Trigger for Login Modal
+  window.addEventListener('scroll', function() {
+      let scrollTop = window.scrollY;
+      let docHeight = document.body.scrollHeight - window.innerHeight;
+      let scrollPercent = (scrollTop / docHeight) * 100;
+  
+      if (scrollPercent > 50) {
+          // Show login modal if user scrolls 50%
+          let authModal = new bootstrap.Modal(document.getElementById('authModal'));
+          authModal.show();
+          
+          // Remove event listener after showing once
+          window.removeEventListener('scroll', arguments.callee);
+      }
+  });
+  </script>
+  
+
+  
 
 </body>
 </html>

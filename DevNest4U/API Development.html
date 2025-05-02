@@ -3,19 +3,453 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>API DEV</title>
      <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
      <!-- Font Awesome & Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
      <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
+    <!-- Standard Favicon -->
+    <link rel="icon" type="image/png" href="favicon/favicon.ico">
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+
+    <!-- Web App Manifest (Optional) -->
+    <link rel="manifest" href="favicon/site.webmanifest">
+<style>
+    .custom-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.custom-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+}
+  body.dark-mode #formattedJson {
+    background-color: #1e1e1e !important;
+    color: #9cdcfe !important;
+  }
+
+  body.dark-mode textarea,
+  body.dark-mode .form-control {
+    background-color: #2c2c2c;
+    color: #fff;
+  }
+
+  /* Optional: dark mode adjustment */
+@media (prefers-color-scheme: dark) {
+  .dark-mode-support {
+    background-color: #1e1e1e !important;
+    color: #ffffff !important;
+  }
+}
+
+html {
+  overflow-x: hidden;
+}
+
+</style>
 </head>
 <body>
     <!-- Navbar will be inserted here -->
     <div id="navbar"></div>
-    
+    <section id="intro" class="bg-dark text-light py-5">
+        <div class="container">
+          <h2 class="text-center mb-4" data-aos="fade-up">🔗 Introduction to REST API</h2>
+          
+          <div class="row align-items-center">
+            <!-- Text Content -->
+            <div class="col-md-6 mb-2" data-aos="fade-right">
+              <h5><i class="fas fa-plug text-warning"></i> What is an API?</h5>
+              <p>An API (Application Programming Interface) allows software applications to communicate with each other. Think of it as a waiter taking your order and delivering food in a restaurant!</p>
+      
+              <h5><i class="fas fa-sitemap text-warning"></i> What is REST API?</h5>
+              <p>REST (Representational State Transfer) is an architectural style for designing networked applications. It uses standard HTTP methods like GET, POST, PUT, DELETE.</p>
+      
+              <h5><i class="fas fa-question-circle text-warning"></i> Why, Where, When?</h5>
+              <ul>
+                <li>🌐 Used in frontend-backend data transfer.</li>
+                <li>📱 Used in mobile apps, websites, services.</li>
+                <li>🕒 Used anytime you need to connect or exchange data.</li>
+              </ul>
+      
+              <h5><i class="fas fa-code-branch text-warning"></i> Real-world Example:</h5>
+              <p>When you search weather info on a site, it requests weather data from a weather REST API and displays it on your browser.</p>
+            </div>
+      
+            <!-- REST API Image -->
+            <div class="col-md-6 mt-4 mt-md-0 text-center" data-aos="fade-left">
+              <img src="images/C_API.jpg" alt="REST API Flow" class="img-fluid rounded shadow" width="450" height="450">
+              <small class="text-muted d-block mt-2">Image: REST API Architecture (Client ↔ Server)</small>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section id="crud-info" class="bg-dark text-light py-5">
+        <div class="container">
+          <h2 class="text-center mb-4" data-aos="fade-up">🧱 CRUD Operations in REST API</h2>
+          <p class="lead text-center mb-4" data-aos="fade-up" data-aos-delay="100">
+            CRUD stands for Create, Read, Update, and Delete — the four basic operations for managing data in a web application.
+          </p>
+      
+          <div class="row text-center gy-4">
+            <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+              <h5><i class="fas fa-plus-circle text-success"></i> Create</h5>
+              <p>Used to add new data to the database using <code>POST</code> requests.</p>
+            </div>
+            <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+              <h5><i class="fas fa-eye text-primary"></i> Read</h5>
+              <p>Used to retrieve or view data using <code>GET</code> requests.</p>
+            </div>
+            <div class="col-md-3" data-aos="fade-up" data-aos-delay="400">
+              <h5><i class="fas fa-edit text-warning"></i> Update</h5>
+              <p>Used to modify existing data using <code>PUT</code> or <code>PATCH</code>.</p>
+            </div>
+            <div class="col-md-3" data-aos="fade-up" data-aos-delay="500">
+              <h5><i class="fas fa-trash-alt text-danger"></i> Delete</h5>
+              <p>Used to remove data from the database using <code>DELETE</code>.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- HTTP methods -->
+      <section id="http-methods" class="py-5">
+        <div class="container">
+          <h2 class="text-center mb-4" data-aos="fade-up">⚙️ HTTP Methods in REST API</h2>
+          <p class="text-center mb-5" data-aos="fade-up" data-aos-delay="100">
+            REST APIs use standard HTTP methods to perform actions on resources. Each method has a specific purpose in CRUD operations.
+          </p>
+      
+          <!-- First Row: GET, POST, PUT -->
+          <div class="row g-4 justify-content-center">
+            <!-- GET -->
+            <div class="col-md-6 col-lg-4" data-aos="flip-left">
+              <div class="card shadow-sm h-100 custom-card">
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title"><i class="fas fa-download text-primary me-2"></i>GET</h5>
+                  <p class="card-text">Retrieves data from the server. <br> Example: fetching a user's profile info.</p>
+                  <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/GET" target="_blank" class="mt-auto btn btn-sm btn-outline-primary text-dark">Learn More</a>
+                </div>
+              </div>
+            </div>
+      
+            <!-- POST -->
+            <div class="col-md-6 col-lg-4" data-aos="flip-right" data-aos-delay="100">
+              <div class="card shadow-sm h-100 custom-card">
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title"><i class="fas fa-plus-circle text-success me-2"></i>POST</h5>
+                  <p class="card-text">Creates a new resource on the server. Example: submitting a signup form.</p>
+                  <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST" target="_blank" class="mt-auto btn btn-sm btn-outline-success text-dark">Learn More</a>
+                </div>
+              </div>
+            </div>
+      
+            <!-- PUT -->
+            <div class="col-md-6 col-lg-4" data-aos="flip-right" data-aos-delay="200">
+              <div class="card shadow-sm h-100 custom-card">
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title"><i class="fas fa-sync-alt text-warning me-2"></i>PUT</h5>
+                  <p class="card-text">Updates an existing resource entirely. Example: updating a user's full profile.</p>
+                  <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/PUT" target="_blank" class="mt-auto btn btn-sm btn-outline-warning text-dark">Learn More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+          <!-- Second Row: DELETE, PATCH -->
+          <div class="row g-4 justify-content-center mt-2">
+            <!-- DELETE -->
+            <div class="col-md-6 col-lg-4" data-aos="flip-left" data-aos-delay="100">
+              <div class="card shadow-sm h-100 custom-card">
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title"><i class="fas fa-trash-alt text-danger me-2"></i>DELETE</h5>
+                  <p class="card-text">Removes a resource from the server. Example: deleting a blog post.</p>
+                  <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/DELETE" target="_blank" class="mt-auto btn btn-sm btn-outline-danger text-dark">Learn More</a>
+                </div>
+              </div>
+            </div>
+      
+            <!-- PATCH -->
+            <div class="col-md-6 col-lg-4" data-aos="flip-right" data-aos-delay="200">
+              <div class="card shadow-sm h-100 custom-card">
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title"><i class="fas fa-edit text-info me-2"></i>PATCH</h5>
+                  <p class="card-text">Partially updates a resource.    Example: updating only a user's email address.</p>
+                  <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/PATCH" target="_blank" class="mt-auto btn btn-sm btn-outline-info text-dark">Learn More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Real world use cases -->
+      <section id="rest-use-cases" class="bg-dark py-5">
+        <div class="container">
+          <h2 class="text-center mb-4" data-aos="fade-up">🌐 Real-World Use Cases of REST API</h2>
+          <p class="text-center mb-5" data-aos="fade-up" data-aos-delay="100">
+            REST APIs are used across modern web applications to enable seamless communication between the frontend and backend.
+          </p>
+      
+          <div class="row gy-4">
+            <!-- User Authentication -->
+            <div class="col-md-6" data-aos="fade-right">
+              <div class="d-flex align-items-start">
+                <i class="fas fa-user-shield fa-2x text-primary me-3"></i>
+                <div>
+                  <h5>User Authentication</h5>
+                  <p>Used in login/signup systems to send and receive user credentials securely.</p>
+                </div>
+              </div>
+            </div>
+      
+            <!-- Social Media Feed -->
+            <div class="col-md-6" data-aos="fade-left">
+              <div class="d-flex align-items-start">
+                <i class="fas fa-comments fa-2x text-success me-3"></i>
+                <div>
+                  <h5>Social Media Feed</h5>
+                  <p>Fetches posts, comments, and likes dynamically using REST API calls.</p>
+                </div>
+              </div>
+            </div>
+      
+            <!-- E-commerce Cart -->
+            <div class="col-md-6" data-aos="fade-right" data-aos-delay="100">
+              <div class="d-flex align-items-start">
+                <i class="fas fa-shopping-cart fa-2x text-warning me-3"></i>
+                <div>
+                  <h5>Shopping Cart System</h5>
+                  <p>Add/update/remove items in real-time using CRUD operations via APIs.</p>
+                </div>
+              </div>
+            </div>
+      
+            <!-- Weather App -->
+            <div class="col-md-6" data-aos="fade-left" data-aos-delay="100">
+              <div class="d-flex align-items-start">
+                <i class="fas fa-cloud-sun fa-2x text-info me-3"></i>
+                <div>
+                  <h5>Weather Forecast Apps</h5>
+                  <p>Fetch current or weekly weather data from third-party REST APIs like OpenWeather.</p>
+                </div>
+              </div>
+            </div>
+      
+            <!-- Payments & Wallet -->
+            <div class="col-md-6" data-aos="fade-right" data-aos-delay="200">
+              <div class="d-flex align-items-start">
+                <i class="fas fa-wallet fa-2x text-danger me-3"></i>
+                <div>
+                  <h5>Digital Wallets & Payments</h5>
+                  <p>Initiate transactions, show balance history using secure RESTful APIs.</p>
+                </div>
+              </div>
+            </div>
+      
+            <!-- Dashboard Analytics -->
+            <div class="col-md-6" data-aos="fade-left" data-aos-delay="200">
+              <div class="d-flex align-items-start">
+                <i class="fas fa-chart-line fa-2x text-secondary me-3"></i>
+                <div>
+                  <h5>Admin Dashboards</h5>
+                  <p>REST APIs pull live stats, charts, and data updates in real-time analytics dashboards.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Structure of API -->
+      <section id="api-structure" class="py-5">
+        <div class="container">
+          <h2 class="text-center mb-4" data-aos="fade-up">🔗 API Structure & Endpoints</h2>
+          <p class="text-center mb-5" data-aos="fade-up" data-aos-delay="100">
+            REST APIs follow a structured pattern that makes communication between frontend and backend predictable and scalable.
+          </p>
+      
+          <!-- Flowchart / API Structure Image -->
+          <div class="text-center mb-5" data-aos="zoom-in" data-aos-delay="200">
+            <img src="images/restapidesign.gif" alt="REST API Flow" class="img-fluid rounded shadow" style="max-height: 500px; max-width: 500px;">
+          </div>
+      
+          <!-- Endpoint Examples -->
+          <div class="row gy-4">
+            <div class="col-md-6" data-aos="fade-right">
+              <div class="p-4 bg-white text-dark rounded shadow h-100">
+                <h5><code>GET /api/users</code></h5>
+                <p>Fetches a list of users from the server. Often used in admin dashboards or user list pages.</p>
+              </div>
+            </div>
+      
+            <div class="col-md-6" data-aos="fade-left">
+              <div class="p-4 bg-white text-dark rounded shadow h-100">
+                <h5><code>GET /api/users/:id</code></h5>
+                <p>Retrieves a specific user's information using their ID. Example: <code>/api/users/102</code></p>
+              </div>
+            </div>
+      
+            <div class="col-md-6" data-aos="fade-right" data-aos-delay="100">
+              <div class="p-4 bg-white text-dark rounded shadow h-100">
+                <h5><code>POST /api/users</code></h5>
+                <p>Creates a new user by sending form data in the request body.</p>
+              </div>
+            </div>
+      
+            <div class="col-md-6" data-aos="fade-left" data-aos-delay="100">
+              <div class="p-4 bg-white text-dark rounded shadow h-100">
+                <h5><code>PUT /api/users/:id</code></h5>
+                <p>Updates an existing user's data. Sends the entire updated record.</p>
+              </div>
+            </div>
+      
+            <div class="col-md-6" data-aos="fade-right" data-aos-delay="200">
+              <div class="p-4 bg-white text-dark rounded shadow h-100">
+                <h5><code>PATCH /api/users/:id</code></h5>
+                <p>Updates only specific fields of a user. More efficient for partial updates.</p>
+              </div>
+            </div>
+      
+            <div class="col-md-6" data-aos="fade-left" data-aos-delay="200">
+              <div class="p-4 text-dark bg-light rounded shadow h-100">
+                <h5><code>DELETE /api/users/:id</code></h5>
+                <p>Deletes a user from the database using their unique ID.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section id="api-resources" class="py-5">
+        <div class="container text-dark">
+          <h2 class="text-center text-info mb-4" data-aos="fade-up">📚 REST API Resources</h2>
+          <p class="text-center mb-5 text-info" data-aos="fade-up" data-aos-delay="100">
+            Learn REST API deeply using official documentation, downloadable PDFs, and full tutorial videos.
+          </p>
+      
+          <!-- Icons Grid for Docs & PDFs -->
+          <div class="row text-center g-4 mb-5">
+            <div class="col-md-4" data-aos="zoom-in">
+              <div class="bg-white p-4 shadow rounded h-100">
+                <i class="bi bi-globe fs-1 text-primary mb-3"></i>
+                <h5 class="mb-2">Official REST API Guide</h5>
+                <a href="https://restfulapi.net/" target="_blank" class="btn btn-outline-primary btn-sm text-dark mt-2">Visit Site</a>
+              </div>
+            </div>
+           <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="bg-white p-4 shadow rounded h-100">
+                <i class="bi bi-file-earmark-pdf fs-1 text-danger mb-3"></i>
+                <h5 class="mb-2">REST API Cheat Sheet PDF</h5>
+                <a href="https://www.tutorialspoint.com/restful/restful_tutorial.pdf" target="_blank" class="btn btn-outline-danger text-dark btn-sm mt-2">Download PDF</a>
+            </div>
+            </div>
+
+            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+              <div class="bg-white p-4 shadow rounded h-100">
+                <i class="bi bi-book fs-1 text-success mb-3"></i>
+                <h5 class="mb-2">REST with Postman Article</h5>
+                <a href="https://learning.postman.com/docs/getting-started/introduction/" target="_blank" class="btn btn-outline-success btn-sm text-dark mt-2">Read Article</a>
+              </div>
+            </div>
+          </div>
+      
+          <!-- Video Tutorials -->
+          <div class="text-center text-primary mb-4" data-aos="fade-up">
+            <h4 class="mb-3">🎥 Video Tutorials</h4>
+            <p>Best beginner-friendly YouTube tutorials for learning REST APIs hands-on.</p>
+          </div>
+      
+          <div class="row g-4">
+            <div class="col-md-6" data-aos="fade-up">
+              <div class="ratio ratio-16x9 rounded shadow">
+                <iframe src="https://www.youtube.com/embed/Q-BpqyOT3a8" title="What is REST API? Full Beginner Guide" allowfullscreen></iframe>
+              </div>
+              <h6 class="mt-2 text-light text-center">REST API Tutorial for Beginners (FreeCodeCamp)</h6>
+            </div>
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+              <div class="ratio ratio-16x9 rounded shadow">
+                <iframe src="https://www.youtube.com/embed/GZvSYJDk-us" title="REST APIs with Node & Express" allowfullscreen></iframe>
+              </div>
+              <h6 class="mt-2 text-light text-center">Build REST APIs with Node & Express</h6>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section id="api-flow bg-dark" class="p-5">
+        <div class="container">
+          <h2 class="text-center mb-4" data-aos="fade-up">🔄 REST API Workflow</h2>
+          <p class="text-center mb-5" data-aos="fade-up" data-aos-delay="100">
+            Understand how REST APIs operate using a client-server model, standard HTTP methods, and request/response cycle.
+          </p>
+      
+          <!-- Main Flow Diagram -->
+          <div class="text-center mb-5" data-aos="zoom-in">
+            <img src="images/Rest api architeture.jpg" alt="REST API Flow Diagram"
+              class="img-fluid rounded shadow" style="max-width: 100%; height: auto;" />
+            <p class="mt-3">Basic Client-Server REST API Flow (GET, POST, PUT, DELETE)</p>
+          </div>
+      
+          <!-- CRUD Operation Visual -->
+          <div class="text-center" data-aos="zoom-in" data-aos-delay="100">
+            <img src="images/Rest_vs_crud.jpg" alt="CRUD REST API Flow"
+              class="img-fluid rounded shadow" style="max-width: 60%; height: auto;" />
+            <p class="mt-3">CRUD Operation Mapping to HTTP Methods</p>
+          </div>
+        </div>
+      </section>
+
+   <!-- JSON Practice Tools Section -->
+<section id="json-tools" class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-4" data-aos="fade-up">🧪 Practice JSON with Real Tools</h2>
+    <p class="text-center mb-4" data-aos="fade-up" data-aos-delay="100">
+      Explore, practice, and understand JSON structure and API responses using these recommended tools and playgrounds.
+    </p>
+
+    <div class="row g-4 justify-content-center"  data-aos-delay="200">
+      <!-- W3Schools JSON Tutorial -->
+      <div class="col-md-4 col-sm-6" data-aos="fade-left">
+        <div class="p-4 rounded shadow-sm h-100 text-center bg-light text-dark dark-mode-support">
+          <h5>📘 W3Schools JSON Tutorial</h5>
+          <p class="mb-2">Learn JSON basics with interactive examples and exercises.</p>
+          <a href="https://www.w3schools.com/js/js_json_intro.asp" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">
+            🌐 Visit W3Schools ↗
+          </a>
+        </div>
+      </div>
+
+      <!-- Postman Web -->
+      <div class="col-md-4 col-sm-6" data-aos="fade-up">
+        <div class="p-4 rounded shadow-sm h-100 text-center bg-light text-dark dark-mode-support">
+          <h5>📫 Postman Web</h5>
+          <p class="mb-2">Test live API requests and explore formatted JSON responses.</p>
+          <a href="https://web.postman.co/" class="btn btn-warning btn-sm" target="_blank" rel="noopener noreferrer">
+            🌐 Open Postman ↗
+          </a>
+        </div>
+      </div>
+
+      <!-- JSON Formatter -->
+      <div class="col-md-4 col-sm-6" data-aos="fade-right">
+        <div class="p-4 rounded shadow-sm h-100 text-center bg-light text-dark dark-mode-support">
+          <h5>🧰 JSON Formatter</h5>
+          <p class="mb-2">Paste and prettify JSON data for readability or validation.</p>
+          <a href="https://jsonformatter.org/json-parser" class="btn btn-success btn-sm" target="_blank" rel="noopener noreferrer">
+            🌐 Try Formatter ↗
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 
     <!-- Footer will be inserted here -->
@@ -24,7 +458,26 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
      <!-- Custom JS -->
-    <script src="script.js"></script>
-
+    <script src="js/script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            AOS.init();
+        });
+        </script>
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            AOS.init();
+        
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+              anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href'))
+                        .scrollIntoView({ behavior: 'smooth' });
+              });
+            });
+          });
+        </script>      
 </body>
 </html>

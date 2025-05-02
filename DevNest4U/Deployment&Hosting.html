@@ -3,20 +3,457 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Deployment & Hosting for Web Projects</title>
      <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
      <!-- Font Awesome & Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
      <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
+    <!-- Standard Favicon -->
+    <link rel="icon" type="image/png" href="favicon/favicon.ico">
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+
+    <!-- Web App Manifest (Optional) -->
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <style>
+      html {
+  overflow-x: hidden;
+}
+
+    </style>
 </head>
 <body>
     <!-- Navbar will be inserted here -->
     <div id="navbar"></div>
-    
 
+   <!-- Section 1: Introduction to Deployment -->
+   <section id="deployment-intro" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4" data-aos="fade-up">🚀 Introduction to Deployment</h2>
+  
+      <!-- What is Deployment -->
+      <div class="row mb-4 align-items-center" data-aos="fade-up" data-aos-delay="100">
+        <div class="col-md-1 text-center">
+          <i class="bi bi-upload fs-2 text-primary"></i>
+        </div>
+        <div class="col-md-11">
+          <h5 class="fw-bold">What is Deployment?</h5>
+          <p class="mb-0">
+            Deployment is the process of pushing your code or application from a local development environment to a live server, so that users can access it online. It turns your project into a real-world product!
+          </p>
+        </div>
+      </div>
+  
+      <!-- Why is Deployment Important -->
+      <div class="row mb-4 align-items-center" data-aos="fade-up" data-aos-delay="200">
+        <div class="col-md-1 text-center">
+          <i class="bi bi-globe fs-2 text-success"></i>
+        </div>
+        <div class="col-md-11">
+          <h5 class="fw-bold">Why is it Important?</h5>
+          <p class="mb-0">
+            Without deployment, your app lives only on your local machine. Hosting it allows others to access, test, and use your project. It’s essential for real-world impact, collaboration, and growth!
+          </p>
+        </div>
+      </div>
+  
+      <!-- Hosting vs Deployment -->
+      <div class="row mb-4 align-items-center" data-aos="fade-up" data-aos-delay="300">
+        <div class="col-md-1 text-center">
+          <i class="bi bi-server fs-2 text-danger"></i>
+        </div>
+        <div class="col-md-11">
+          <h5 class="fw-bold">Hosting vs Deployment</h5>
+          <p class="mb-0">
+            <strong>Hosting</strong> refers to the service where your app lives online (like Vercel, Netlify), while <strong>deployment</strong> is the act of moving it there. Think of hosting as the "house" and deployment as "moving in"!
+          </p>
+        </div>
+      </div>
+  
+    </div>
+  </section>
+  
+  <section id="types-of-hosting" class="py-5 bg-dark text-light">
+    <div class="container">
+      <h2 class="text-center mb-4" data-aos="fade-up">💡 Types of Hosting</h2>
+      <p class="text-center mb-5" data-aos="fade-up" data-aos-delay="100">
+        Understand the different types of hosting to choose what fits your project best.
+      </p>
+  
+      <div class="accordion" id="hostingAccordion" data-aos="fade-up" data-aos-delay="200">
+        
+        <!-- Hosting Items (Repeatable) -->
+        <div class="accordion-item bg-secondary text-light">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button collapsed bg-dark text-light d-flex justify-content-between align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+              🧩 Shared Hosting
+              <span class="icon ms-auto">▼</span>
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#hostingAccordion">
+            <div class="accordion-body">
+              Multiple websites share a single server. Cheap but limited performance. Good for beginners.
+            </div>
+          </div>
+        </div>
+  
+        <div class="accordion-item bg-secondary text-light">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed bg-dark text-light d-flex justify-content-between align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              💾 VPS Hosting
+              <span class="icon ms-auto">▼</span>
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#hostingAccordion">
+            <div class="accordion-body">
+              A dedicated portion of a physical server. More control and better performance than shared hosting.
+            </div>
+          </div>
+        </div>
+  
+        <div class="accordion-item bg-secondary text-light">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed bg-dark text-light d-flex justify-content-between align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              ☁️ Cloud Hosting
+              <span class="icon ms-auto">▼</span>
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#hostingAccordion">
+            <div class="accordion-body">
+              Uses multiple servers to balance load. Highly scalable and reliable. Ideal for large apps.
+            </div>
+          </div>
+        </div>
+  
+        <div class="accordion-item bg-secondary text-light">
+          <h2 class="accordion-header" id="headingFour">
+            <button class="accordion-button collapsed bg-dark text-light d-flex justify-content-between align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+              🗂️ Static Hosting
+              <span class="icon ms-auto">▼</span>
+            </button>
+          </h2>
+          <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#hostingAccordion">
+            <div class="accordion-body">
+              Hosts only static files like HTML, CSS, JS. No server-side logic. Very fast. Great for frontend projects.
+            </div>
+          </div>
+        </div>
+  
+        <div class="accordion-item bg-secondary text-light">
+          <h2 class="accordion-header" id="headingFive">
+            <button class="accordion-button collapsed bg-dark text-light d-flex justify-content-between align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+              ⚙️ Serverless Hosting
+              <span class="icon ms-auto">▼</span>
+            </button>
+          </h2>
+          <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#hostingAccordion">
+            <div class="accordion-body">
+              No need to manage servers. Code runs on demand. Examples: Firebase, AWS Lambda. Best for microservices.
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+
+  <!-- Free Hosting Platforms -->
+  <section id="free-hosting" class="py-5 bg-black text-light">
+    <div class="container">
+      <h2 class="text-center mb-4" data-aos="fade-up">🚀 Free Hosting Platforms</h2>
+      <p class="text-center mb-5" data-aos="fade-up" data-aos-delay="100">
+        These platforms allow you to host your frontend or full-stack apps for free with simple deployment options.
+      </p>
+  
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+        
+        <!-- GitHub Pages -->
+        <div class="col" data-aos="zoom-in" data-aos-delay="100">
+          <div class="card h-100 bg-dark text-light border-secondary">
+            <div class="card-body text-center">
+              <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" class="mb-3" width="50">
+              <h5 class="card-title">GitHub Pages</h5>
+              <p class="card-text">Great for hosting static websites directly from your GitHub repo.</p>
+            </div>
+            <div class="card-footer bg-transparent text-center">
+              <a href="https://pages.github.com/" target="_blank" class="btn btn-outline-light btn-sm">Visit Site 🔗</a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Vercel -->
+        <div class="col" data-aos="zoom-in" data-aos-delay="200">
+          <div class="card h-100 bg-dark text-light border-secondary">
+            <div class="card-body text-center">
+                <img src="https://vercel.com/favicon.ico" alt="Vercel Logo" 
+                class="mb-3" width="50">
+              <h5 class="card-title">Vercel</h5>
+              <p class="card-text">Best for Next.js or React apps. Fast, simple, and supports auto-deploy from GitHub.</p>
+            </div>
+            <div class="card-footer bg-transparent text-center">
+              <a href="https://vercel.com/" target="_blank" class="btn btn-outline-light btn-sm">Visit Site 🔗</a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Netlify -->
+        <div class="col" data-aos="zoom-in" data-aos-delay="300">
+          <div class="card h-100 bg-dark text-light border-secondary">
+            <div class="card-body text-center">
+              <img src="https://seeklogo.com/images/N/netlify-logo-758722CDF4-seeklogo.com.png" alt="Netlify" class="mb-3" width="50">
+              <h5 class="card-title">Netlify</h5>
+              <p class="card-text">Static site hosting with built-in CI/CD, free custom domains, and form handling.</p>
+            </div>
+            <div class="card-footer bg-transparent text-center">
+              <a href="https://www.netlify.com/" target="_blank" class="btn btn-outline-light btn-sm">Visit Site 🔗</a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Firebase Hosting -->
+        <div class="col" data-aos="zoom-in" data-aos-delay="400">
+          <div class="card h-100 bg-dark text-light border-secondary">
+            <div class="card-body text-center">
+              <img src="https://firebase.google.com/static/images/brand-guidelines/logo-logomark.png" alt="Firebase" class="mb-3" width="40">
+              <h5 class="card-title">Firebase Hosting</h5>
+              <p class="card-text">Host static and dynamic content, serverless functions, and SSL for free.</p>
+            </div>
+            <div class="card-footer bg-transparent text-center">
+              <a href="https://firebase.google.com/docs/hosting" target="_blank" class="btn btn-outline-light btn-sm">Visit Site 🔗</a>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  
+  <section id="github-deploy" class="py-5 bg-dark text-light">
+    <div class="container">
+      <h2 class="text-center mb-4" data-aos="fade-up">📤 Deploy with GitHub Pages</h2>
+      <p class="text-center mb-5" data-aos="fade-up" data-aos-delay="100">
+        Host your static website (HTML/CSS/JS) directly from a GitHub repository in just a few steps.
+      </p>
+  
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <ol class="list-group list-group-numbered list-group-flush">
+            <li class="list-group-item bg-dark text-light border-secondary" data-aos="fade-up" data-aos-delay="150">
+              <span class="fw-bold">Create a GitHub Repository</span><br>
+              Upload your project files (HTML, CSS, JS) to a public repository.
+            </li>
+            <li class="list-group-item bg-dark text-light border-secondary" data-aos="fade-up" data-aos-delay="200">
+              <span class="fw-bold">Ensure your entry file is named <code>index.html</code></span><br>
+              GitHub Pages looks for this file to serve your site.
+            </li>
+            <li class="list-group-item bg-dark text-light border-secondary" data-aos="fade-up" data-aos-delay="250">
+              <span class="fw-bold">Navigate to <code>Settings → Pages</code></span><br>
+              In your repository, click on <strong>Settings</strong> > <strong>Pages</strong> in the sidebar.
+            </li>
+            <li class="list-group-item bg-dark text-light border-secondary" data-aos="fade-up" data-aos-delay="300">
+              <span class="fw-bold">Choose the deployment source</span><br>
+              Under “Source”, select the branch (e.g., <code>main</code>) and root folder.
+            </li>
+            <li class="list-group-item bg-dark text-light border-secondary" data-aos="fade-up" data-aos-delay="350">
+              <span class="fw-bold">Click Save and wait</span><br>
+              GitHub will generate a live URL for your project.
+            </li>
+          </ol>
+  
+          <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="400">
+            <a href="https://docs.github.com/en/pages/quickstart" target="_blank" class="btn btn-outline-info">
+              🔗 Learn from GitHub Pages Quickstart Docs
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Deployment page -->
+  <section class="py-5"  id="hosting-options">
+    <div class="container">
+      <h2 class="text-center mb-4" data-aos="fade-up">🌐 Hosting & Servers Overview</h2>
+      <p class="text-center mb-5" data-aos="fade-up" data-aos-delay="100">
+        Choose the right platform based on your project type — from static frontend sites to full-stack and serverless applications.
+      </p>
+      <div class="row g-4">
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="p-4 border rounded shadow-sm h-100 bg-dark text-white">
+            <h5>🔧 Frontend Hosting</h5>
+            <ul class="list-unstyled mt-2">
+              <li>➡️ <a href="https://vercel.com" class="text-info" target="_blank">Vercel</a></li>
+              <li>➡️ <a href="https://netlify.com" class="text-info" target="_blank">Netlify</a></li>
+              <li>✅ Easy deployment via Git</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="p-4 border rounded shadow-sm h-100 bg-dark text-white">
+            <h5>🖥️ Full-Stack Hosting</h5>
+            <ul class="list-unstyled mt-2">
+              <li>➡️ <a href="https://www.digitalocean.com/" class="text-info" target="_blank">DigitalOcean</a></li>
+              <li>➡️ <a href="https://aws.amazon.com/" class="text-info" target="_blank">AWS</a></li>
+              <li>➡️ <a href="https://www.linode.com/" class="text-info" target="_blank">Linode</a></li>
+              <li>⚙️ Manual setup & server management</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+          <div class="p-4 border rounded shadow-sm h-100 bg-dark text-white">
+            <h5>☁️ Serverless Hosting</h5>
+            <ul class="list-unstyled mt-2">
+              <li>➡️ <a href="https://firebase.google.com/" class="text-info" target="_blank">Firebase Hosting</a></li>
+              <li>✅ Best for SPAs, serverless APIs</li>
+              <li>📦 Easy CLI deployment</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CI/CD Basics -->
+  <section id="cicd" class="py-5 bg-black text-white">
+    <div class="container" data-aos="fade-up">
+      <h2 class="text-center mb-4">🚀 CI/CD Basics</h2>
+      <p class="text-center mb-5">
+        Continuous Integration (CI) is the practice of automatically testing and integrating code into a shared repository, 
+        while Continuous Deployment (CD) automates the delivery of applications to production. Together, they speed up development, improve code quality, and reduce manual errors.
+      </p>
+  
+      <div class="row text-center">
+        <!-- GitHub Actions Card -->
+        <div class="col-md-6 mb-4">
+          <div class="card bg-secondary h-100 shadow-lg border-0" data-aos="fade-right">
+            <div class="card-body">
+              <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" class="mb-3" width="50">
+              <h5 class="card-title text-black">GitHub Actions</h5>
+              <p class="card-text">
+                Automate workflows right from your GitHub repo. Easily build, test, and deploy your code on every push or pull request.
+              </p>
+              <a href="https://docs.github.com/en/actions" class="btn btn-outline-light btn-sm bg-dark" target="_blank">Learn More</a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Vercel Card -->
+        <div class="col-md-6 mb-4">
+          <div class="card bg-secondary h-100 shadow-lg border-0" data-aos="fade-left">
+            <div class="card-body">
+              <img src="https://assets.vercel.com/image/upload/front/favicon/vercel/favicon.ico" alt="Vercel Logo" class="mb-3" width="50">
+              <h5 class="card-title text-black">Vercel Auto Deploy</h5>
+              <p class="card-text">
+                Deploy your site instantly with every git push. Vercel detects changes and auto-builds your app from your repository.
+              </p>
+              <a href="https://vercel.com/docs" class="btn btn-outline-light btn-sm bg-dark" target="_blank">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- YouTube Videos(hosting and servers) -->
+  <section id="hosting" class="py-5 text-white bg-dark">
+    <div class="container" data-aos="fade-up">
+      <h2 class="text-center mb-4">🌐 Hosting & Servers Overview</h2>
+      <p class="text-center mb-5">
+        Choose the right platform based on your project type — from static frontend sites to full-stack and serverless applications.
+      </p>
+  
+      <div class="row">
+        <!-- Vercel and Netlify -->
+        <div class="col-md-6 mb-4">
+          <div class="ratio ratio-16x9 mb-3">
+            <iframe src="https://www.youtube.com/embed/1aXZQcG2Y6I" title="Vercel & Netlify Hosting Tutorial" allowfullscreen></iframe>
+          </div>
+          <h5 class="text-center">🚀 Deploy Frontend using Vercel & Netlify</h5>
+        </div>
+  
+        <!-- Firebase Hosting -->
+        <div class="col-md-6 mb-4">
+          <div class="ratio ratio-16x9 mb-3">
+            <iframe src="https://www.youtube.com/embed/LOeioOKUKI8" title="Firebase Hosting for Serverless Apps" allowfullscreen></iframe>
+          </div>
+          <h5 class="text-center">☁️ Firebase Hosting – Perfect for SPAs & Serverless</h5>
+        </div>
+      </div>
+  
+      <div class="row justify-content-center">
+        <!-- Full-stack deployment -->
+        <div class="col-md-10 mb-4">
+          <div class="ratio ratio-16x9 mb-3">
+            <iframe src="https://www.youtube.com/embed/nu_pCVPKzTk" title="Full Deployment Tutorial - FreeCodeCamp"  allowfullscreen  ></iframe>
+          </div>
+          <h5 class="text-center">📦 Full Stack Deployment Guide (FreeCodeCamp)</h5>
+          <p class="text-center small">Covers Vercel, Netlify, Firebase, GitHub Actions, DigitalOcean & More.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="one-click-deploy" class="py-5 bg-grey text-light">
+    <div class="container">
+      <h2 class="text-center mb-4" data-aos="fade-up">⚡ One-Click Deploy: Vercel / Netlify / Firebase</h2>
+      <p class="text-center mb-5" data-aos="fade-up" data-aos-delay="100">
+        These platforms let you deploy your frontend projects easily from GitHub using one-click or CLI methods.
+      </p>
+  
+      <div class="row row-cols-1 row-cols-md-3 g-4 text-center">
+        
+        <!-- Vercel -->
+        <div class="col" data-aos="zoom-in" data-aos-delay="200">
+          <div class="p-4 bg-black h-100 rounded shadow-sm">
+            <img src="https://vercel.com/favicon.ico" alt="Vercel" width="50" class="mb-3">
+            <h5 class="fw-bold">Vercel</h5>
+            <ul class="list-unstyled small">
+              <li>✅ GitHub auto-deploy</li>
+              <li>✅ Great for React/Next.js</li>
+              <li>🌐 <a href="https://vercel.com/docs" target="_blank" class="text-info text-decoration-underline">Vercel Docs</a></li>
+            </ul>
+            <a href="https://vercel.com/import/git" target="_blank" class="btn btn-outline-light btn-sm">➕ Deploy Now</a>
+          </div>
+        </div>
+  
+        <!-- Netlify -->
+        <div class="col" data-aos="zoom-in" data-aos-delay="300">
+          <div class="p-4 bg-black h-100 rounded shadow-sm">
+            <img src="https://seeklogo.com/images/N/netlify-logo-758722CDF4-seeklogo.com.png" alt="Netlify" width="50" class="mb-3">
+            <h5 class="fw-bold">Netlify</h5>
+            <ul class="list-unstyled small">
+              <li>✅ Drag & drop deploy</li>
+              <li>✅ Form handling + functions</li>
+              <li>🌐 <a href="https://docs.netlify.com/" target="_blank" class="text-info text-decoration-underline">Netlify Docs</a></li>
+            </ul>
+            <a href="https://app.netlify.com/drop" target="_blank" class="btn btn-outline-light btn-sm">➕ Deploy Now</a>
+          </div>
+        </div>
+  
+        <!-- Firebase -->
+        <div class="col" data-aos="zoom-in" data-aos-delay="400">
+          <div class="p-4 bg-black h-100 rounded shadow-sm">
+            <img src="https://firebase.google.com/static/images/brand-guidelines/logo-logomark.png" alt="Firebase" width="40" class="mb-3">
+            <h5 class="fw-bold">Firebase Hosting</h5>
+            <ul class="list-unstyled small">
+              <li>✅ CLI-based deploy</li>
+              <li>✅ Serverless support</li>
+              <li>🌐  <a href="https://firebase.google.com/docs/hosting" target="_blank" class="text-info text-decoration-underline">Firebase Docs</a></li>
+            </ul>
+            <a href="https://console.firebase.google.com/" target="_blank" class="btn btn-outline-light btn-sm">➕ Deploy Now</a>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  
+  
 
     <!-- Footer will be inserted here -->
     <div id="footer"></div>
@@ -24,7 +461,35 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
      <!-- Custom JS -->
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            AOS.init({
+            duration: 800, // optional
+        });
+        });
+        </script>
+        
+    <script>
+        document.querySelectorAll('.accordion-button').forEach(btn => {
+          btn.addEventListener('click', function () {
+            const icon = this.querySelector('.icon');
+            const allIcons = document.querySelectorAll('.accordion-button .icon');
+            
+            // Reset all icons
+            allIcons.forEach(i => i.textContent = '▼');
+      
+            // If this one is open, set to up arrow
+            setTimeout(() => {
+              if (!btn.classList.contains('collapsed')) {
+                icon.textContent = '▲';
+              }
+            }, 100);
+          });
+        });
+      </script>
+      
 </body>
 </html>

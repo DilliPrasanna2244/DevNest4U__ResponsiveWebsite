@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>DBMS page</title>
      <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
      <!-- Font Awesome & Bootstrap Icons -->
@@ -11,20 +11,295 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
      <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
+    <!-- Standard Favicon -->
+    <link rel="icon" type="image/png" href="favicon/favicon.ico">
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+
+    <!-- Web App Manifest (Optional) -->
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <style>
+        .section-title {
+          margin-top: 40px;
+          margin-bottom: 20px;
+        }
+        .video-embed {
+          width: 100%;
+          height: 315px;
+        }
+        .card-hover:hover {
+          box-shadow: 0 0 15px rgba(0,0,0,0.2);
+          transform: scale(1.02);
+          transition: 0.3s;
+        }
+        .card:hover {
+        transform: translateY(-5px);
+        transition: 0.3s ease-in-out;
+        background-color: #f0fdf4;
+      }
+        @media (max-width: 768px) {
+          iframe {
+            width: 100% !important;
+            height: auto !important;
+          }
+         }
+         html {
+  overflow-x: hidden;
+}
+
+      </style>
 </head>
 <body>
     <!-- Navbar will be inserted here -->
     <div id="navbar"></div>
-    
+    <div class="container py-4">
 
+        <!-- Section 1: Introduction -->
+        <h2 class="section-title text-primary mb-3">What Does Database Do : </h2>
+        <p class="mb-3"><strong>Databases store, manage, and organize data efficiently. In web development, they help store user information, content, and any dynamic data the website needs. DBMS can be broadly categorized into SQL and NoSQL systems.</strong></p>
+    
+        <section class="py-4 bg-dark text-white rounded">
+            <div class="container">
+              <h2 class="text-primary mb-4">How Databases Work with Web Development :</h2>
+              <div class="row align-items-center">
+                <!-- TEXT COLUMN -->
+                <div class="col-md-6">
+                  <p>
+                    Databases are the backbone of modern web applications. They store, retrieve, and manage user and system data efficiently.
+                    In web development, databases are essential for dynamic websites and apps that require login systems, content updates, and user interaction.
+                  </p>
+          
+                  <h5 class="mt-4">Why Use a Database?</h5>
+                  <ul>
+                    <li>Persistent data storage (users, posts, orders, etc.)</li>
+                    <li>User authentication and session handling</li>
+                    <li>Manage structured (SQL) and flexible (NoSQL) data formats</li>
+                  </ul>
+          
+                  <h5 class="mt-4">Connecting Web to DBMS</h5>
+                  <ul>
+                    <li>Frontend (HTML/JS) → API → Backend (Node.js, Python)</li>
+                    <li>Backend → DB via libraries (e.g., Sequelize, Mongoose)</li>
+                    <li>Data is retrieved → processed → displayed to user</li>
+                  </ul>
+                </div>
+          
+                <!-- IMAGE COLUMN -->
+                <div class="col-md-6 text-center">
+                  <img src="images/Databaseflow.jpeg" alt="DBMS Workflow" class="img-fluid rounded shadow mt-3 mt-md-0" style="max-height: 400px;" />
+                </div>
+              </div>
+            </div>
+          </section>
+          
+          
+          <section class="py-5 bg-light">
+            <div class="container">
+              <h3 class="mb-4 text-center text-dark">SQL vs NoSQL – When to Use What?</h3>
+              <div class="row align-items-center">
+                <div class="col-md-6">
+                  <table class="table table-bordered">
+                    <thead class="table-dark text-center">
+                      <tr>
+                        <th>Use Case</th>
+                        <th> SQL </th>
+                        <th>NoSQL</th>
+                      </tr>
+                    </thead>
+                    <tbody class="text-center">
+                      <tr class="bg-white">
+                        <td class="text-start">Structured data with relations</td>
+                        <td>✔️</td>
+                        <td class="bg-secondary">❌</td>
+                      </tr>
+                      <tr class="bg-secondary text-white">
+                        <td class="text-start">Flexible schema or JSON-like data</td>
+                        <td class="bg-secondary">❌</td>
+                        <td>✔️</td>
+                      </tr>
+                      <tr class="bg-white">
+                        <td class="text-start">Strict schema needed</td>
+                        <td>✔️</td>
+                        <td class="bg-secondary">❌</td>
+                      </tr>
+                      <tr class="bg-secondary text-white">
+                        <td class="text-start">Highly scalable systems</td>
+                        <td class="bg-secondary">❌</td>
+                        <td>✔️</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="col-md-6">
+                  <img src="images/sql_vs_nosql.jpg" alt="SQL vs NoSQL" class="img-fluid rounded shadow" />
+                </div>
+              </div>
+            </div>
+          </section>
+          
+    
+        <!-- Section 2: Summary with Image and Links -->
+        <h2 class="section-title text-primary">Understanding DBMS – A Snapshot</h2>
+        <div class="row align-items-center bg-secondary px-3 py-4 rounded">
+          <div class="col-md-6">
+            <img src="images/database_works.png" alt="sql-vs-nosql-diagram" class="img-fluid rounded shadow" />
+          </div>
+          <div class="col-md-6">
+            <h5>Top Resources:</h5>
+            <ul>
+              <li><a href="https://dev.mysql.com/doc/" target="_blank">MySQL Documentation</a></li>
+              <li><a href="https://www.postgresql.org/docs/" target="_blank">PostgreSQL Docs</a></li>
+              <li><a href="https://www.mongodb.com/docs/" target="_blank">MongoDB Documentation</a></li>
+              <li><a href="https://firebase.google.com/docs" target="_blank">Firebase Docs</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Learn/Server-side/Databases" target="_blank">MDN DB Basics</a></li>
+            </ul>
+          </div>
+        </div>
+    
+ <!-- Section 3: Videos -->
+<section class="py-3" id="videos" data-aos="fade-up">
+  <div class="container">
+    <h2 class="section-title text-primary text-center mb-5">Top YouTube Videos – Learn by Watching!</h2>
+    <div class="row g-4">
+      <div class="col-md-6 col-sm-12">
+        <div class="bg-dark border border-secondary rounded p-3 h-100" style="transition: 0.3s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+          <h6 class="mb-3">SQL: MySQL Full Course</h6>
+          <div class="ratio ratio-16x9">
+            <iframe src="https://www.youtube.com/embed/HXV3zeQKqGY" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <div class="bg-dark border border-secondary rounded p-3 h-100" style="transition: 0.3s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+          <h6 class="mb-3">SQL: PostgreSQL Course</h6>
+          <div class="ratio ratio-16x9">
+            <iframe src="https://www.youtube.com/embed/qw--VYLpxG4?si=nXphtk2iyC46srEz" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <div class="bg-dark border border-secondary rounded p-3 h-100" style="transition: 0.3s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+          <h6 class="mb-3">NoSQL: MongoDB Crash Course</h6>
+          <div class="ratio ratio-16x9">
+            <iframe src="https://www.youtube.com/embed/ofme2o29ngU?si=JMKmVjL1UHn-r9fE" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <div class="bg-dark border border-secondary rounded p-3 h-100" style="transition: 0.3s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+          <h6 class="mb-3">NoSQL: Firebase Tutorial</h6>
+          <div class="ratio ratio-16x9">
+            <iframe src="https://www.youtube.com/embed/2Vf1D-rUMwE?si=1g9SPHlaSZ3TZn_c" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Video Modals -->
+<div class="modal fade" id="videoModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content bg-dark">
+      <div class="modal-header border-0">
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="ratio ratio-16x9">
+          <iframe id="videoFrame" class="w-100 h-100" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<section class="py-5" data-aos="fade-up">
+  <div class="container">
+    <h2 class="text-success fw-bold mb-4">📚 More Learning Resources</h2>
+    <div class="row g-4">
+      <!-- Resource Card -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100 shadow-sm border-success border-2">
+          <div class="card-body">
+            <h6 class="card-title text-success">Harvard CS50 SQL Lecture</h6>
+            <a href="https://cs50.harvard.edu/x/2023/weeks/7/" class="stretched-link text-dark">Visit Resource</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100 shadow-sm border-success border-2">
+          <div class="card-body">
+            <h6 class="card-title text-success">CS50 SQL Video</h6>
+            <a href="https://www.youtube.com/watch?v=IGr3T2EdbRY" class="stretched-link text-dark">Visit Resource</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100 shadow-sm border-success border-2">
+          <div class="card-body">
+            <h6 class="card-title text-success">IBM SQL for Data Science</h6>
+            <a href="https://www.coursera.org/learn/sql-for-data-science" class="stretched-link text-dark">Visit Resource</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100 shadow-sm border-success border-2">
+          <div class="card-body">
+            <h6 class="card-title text-success">MongoDB University</h6>
+            <a href="https://learn.mongodb.com/" class="stretched-link text-dark">Visit Resource</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+    
+<section class="py-5" data-aos="fade-up">
+  <div class="container">
+    <h2 class="text-warning fw-bold mb-4">💡 Suggestions for Students</h2>
+    <ul class="list-unstyled">
+      <li class="mb-2">✅ Start with SQL basics before moving to NoSQL.</li>
+      <li class="mb-2">🛠️ Try small CRUD operations on MySQL/PostgreSQL.</li>
+      <li class="mb-2">📝 Build a blog storing posts in SQL and comments in MongoDB.</li>
+      <li class="mb-2">💬 Use Firebase for chat-like real-time features.</li>
+      <li class="mb-2">📊 Compare SQL vs NoSQL query performance.</li>
+      <li class="mb-2">🔍 Practice SQL queries using SQL Fiddle or Mode Analytics.</li>
+      <li class="mb-2">🤝 Contribute to backend & database open-source projects.</li>
+    </ul>
+  </div>
+</section>
+
+</div>
+
+      <!-- <button class="back-to-top" onclick="scrollToTop()">↑</button> -->
+    <!-- Back to Top Button 
+    <button id="backToTop" title="Back to Top" class="btn btn-outline-light position-fixed bottom-0 bg-dark nd-0 m-4" style="z-index: 999; border-radius: 50%; width: 50px; height: 50px; transition: 0.3s ease-in-out;">
+      ↑
+    </button>-->
 
     <!-- Footer will be inserted here -->
     <div id="footer"></div>
      <!-- Bootstrap JS Bundle (Includes Popper.js) -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-     <!-- Custom JS -->
-    <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" 
+    crossorigin="anonymous">
+  </script>
 
+     <!-- Custom JS -->
+    <script src="js/script.js"></script>
+   
+  <script>
+    function openVideoModal(videoUrl) {
+      const frame = document.getElementById('videoFrame');
+      frame.src = videoUrl + '?autoplay=1';
+      new bootstrap.Modal(document.getElementById('videoModal')).show();
+    }
+    // Cleanup video on close
+    document.getElementById('videoModal').addEventListener('hidden.bs.modal', () => {
+      document.getElementById('videoFrame').src = '';
+    });
+  </script> 
+  
 </body>
 </html>

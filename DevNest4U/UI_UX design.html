@@ -3,20 +3,324 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>UI_UX design</title>
      <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
      <!-- Font Awesome & Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
      <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
+    <!-- Standard Favicon -->
+    <link rel="icon" type="image/png" href="favicon/favicon.ico">
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+
+    <!-- Web App Manifest (Optional) -->
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <style>
+        .tool-card img {
+          width: 50px;
+          height: 50px;
+          object-fit: contain;
+        }
+        .section-title {
+          font-size: 2rem;
+          font-weight: bold;
+          margin-top: 40px;
+        }
+        .info-img {
+          max-width: 100%;
+          height: auto;
+          border-radius: 10px;
+        }
+        .infographic-section {
+        background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+        border-radius: 20px;
+        padding: 40px;
+        color: #fff;
+      }
+      .custom-link {
+  color: #ffffff;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.custom-link:hover {
+  color: #00ffc3;
+  text-decoration: underline;
+  padding-left: 5px;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 15px #0fffc0, 0 0 25px #0fffc0;
+  transition: all 0.4s ease-in-out;
+  transform: translateY(-5px);
+}
+
+html {
+  overflow-x: hidden;
+}
+
+
+    </style>
 </head>
 <body>
+   
     <!-- Navbar will be inserted here -->
     <div id="navbar"></div>
-    
+    <div class="container py-5">
+      <h1 class="text-center mb-5">UI/UX Design</h1>
+      <!-- Section 1:-->
+      <section class="mb-5">
+        <div class="row align-items-center">
+          <div class="col-md-6" data-aos="fade-left">
+            <h2 class="section-title">What is UI/UX?</h2>
+            <p>
+              <strong>UI (User Interface) : </strong> focuses on how a product looks.<br>
+              <strong>UX (User Experience) : </strong> is about how it works and feels.
+            </p>
+          </div>
+          <div class="col-md-6 text-center" data-aos="fade-right">
+            <img src="images/Ui_Ux diff.jpg" class="img-fluid rounded" alt="UI vs UX">
+          </div>
+        </div>
+      </section>
+<!-- Section 2 -->
+<section class="mb-5">
+  <div class="container-fluid">
+    <div class="row align-items-stretch flex-md-row-reverse">
 
+      <!-- Text Column -->
+      <div class="col-md-6 d-flex flex-column justify-content-center" id="text-content" data-aos="fade-right">
+        <h2 class="section-title">Where, When, and Why?</h2>
+        <ul>
+          <li><strong>Where:</strong> Websites, Mobile Apps, Digital Products</li>
+          <li><strong>When:</strong> During planning, designing, or redesigning phases</li>
+          <li><strong>Why:</strong> To improve usability, engagement, and product value</li>
+        </ul>   
+        <h2 class="section-title">Benefits of UI/UX</h2>
+        <ul>
+          <li>Improves user satisfaction</li>
+          <li>Reduces development cost</li>
+          <li>Boosts engagement and conversions</li>
+          <li>Builds trust and brand loyalty</li>
+        </ul>
+      </div>
+      <div class="col-md-6 mb-4" data-aos="fade-left">
+        <div id="scrollable-image" style="overflow-y: auto; border-radius: 5px;">
+          <img src="images/5740172.jpg" alt="UX vs UI diagram" class="img-fluid" width="500" height="500">
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- Section 3 -->
+<section class="mb-5">
+  <h2 class="section-title mb-3">Popular Tools</h2>
+  <div class="row row-cols-1 row-cols-md-3 g-4" data-aos="zoom-in">
+
+    <!-- Figma -->
+    <div class="col">
+      <a href="https://www.figma.com/" target="_blank" class="text-decoration-none text-dark">
+        <div class="card h-100 tool-card text-center">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg" class="card-img-top mx-auto mt-3" alt="Figma" style="width: 40px; height: auto;">
+          <div class="card-body">
+            <h5 class="card-title">Figma</h5>
+            <p class="card-text">Collaborative browser-based UI design tool with prototyping and teamwork support.</p>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Adobe XD -->
+    <div class="col">
+      <a href="https://www.adobe.com/products/xd.html" target="_blank" class="text-decoration-none text-dark">
+        <div class="card h-100 tool-card text-center">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/c/c2/Adobe_XD_CC_icon.svg" class="card-img-top mx-auto mt-3" alt="Adobe XD" style="width: 40px; height: auto;">
+          <div class="card-body">
+            <h5 class="card-title">Adobe XD</h5>
+            <p class="card-text">Design and prototype with rich features and Adobe ecosystem integration.</p>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Sketch -->
+    <div class="col">
+      <a href="https://www.sketch.com/" target="_blank" class="text-decoration-none text-dark">
+        <div class="card h-100 tool-card text-center">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/Sketch_Logo.svg" class="card-img-top mx-auto mt-3" alt="Sketch" style="width: 40px; height: auto;">
+          <div class="card-body">
+            <h5 class="card-title">Sketch</h5>
+            <p class="card-text">Mac-only vector-based design tool perfect for clean interfaces and components.</p>
+          </div>
+        </div>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+     <!--Infographic-->
+     <section class="my-5 py-5 infographic-section">
+      <div class="row align-items-center">
+        <div class="col-md-6 mb-4 mb-md-0" data-aos="fade-right">
+          <h2 class="section-title">UI vs UX: What's the Difference?</h2>
+          <ul class="list-unstyled">
+            <li><strong>UI:</strong> Focuses on visual design, colors, typography, and layouts 🎨</li>
+            <li><strong>UI:</strong> Think buttons, sliders, images, spacing</li>
+            <li><strong>UX:</strong> Focuses on user flows, logic, ease of use, and satisfaction 🧠</li>
+            <li><strong>UX:</strong> Think research, wireframes, feedback loops</li>
+          </ul>
+        </div>
+        <div class="col-md-6 text-center" data-aos="fade-left">
+          <img src="images/UX_vs_UI.png" class="img-fluid rounded shadow" alt="UI vs UX infographic">
+        </div>
+      </div>
+    </section>  
+    
+<!-- UI/UX Process Image Display (Refined Size) -->
+<section class="my-5" data-aos="fade-left">
+  <h2 class="section-title text-center mb-4">Visual Guide to UI/UX</h2>
+
+  <div class="container-fluid px-4 border border-light rounded-4">
+    <div class="d-flex overflow-auto gap-4 pb-3" style="scroll-snap-type: x mandatory;">
+      
+      <!-- UX Process Image -->
+      <div class="flex-shrink-0" style="min-width: 50%; max-width: 300px; scroll-snap-align: start;">
+        <img src="images/3circle_Ux.jpg" class="img-fluid rounded shadow w-100" alt="UX Process">
+        <p class="mt-3 text-light fw-semibold">
+          <strong>Did you know?<br></strong> UI/UX isn’t just about design – it shapes how users *feel* and *think*. A great UX reduces **cognitive load**, meaning users don’t waste energy figuring things out. The easier your app feels, the more likely they are to return.
+        </p>
+      </div>
+
+      <!-- UI Steps Image -->
+      <div class="flex-shrink-0" style="min-width: 50%; max-width: 300px; scroll-snap-align: start;">
+        <img src="images/stepsofui.webp" class="img-fluid rounded shadow w-100" alt="UI Steps">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!--section 4 -->
+    
+<section class="mb-5" id="design-process" data-aos="fade-up">
+  <h2 class="section-title text-center">🛠️ UI/UX Design Process</h2>
+  <div class="row row-cols-1 row-cols-md-2 g-4 mt-4">
+
+    <div class="col  text-dark" data-aos="fade-up">
+      <div class="p-4 shadow-sm rounded-4 bg-white h-100 d-flex">
+        <div class="me-3 fs-2">🔍</div>
+        <div>
+          <h5>1. Research</h5>
+          <p class="text-dark">Understand the user needs, market, and problems through surveys, interviews, and data analysis.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col  text-dark" data-aos="fade-up">
+      <div class="p-4 shadow-sm rounded-4 bg-white h-100 d-flex">
+        <div class="me-3 fs-2 text-info">📝</div>
+        <div>
+          <h5>2. Wireframing</h5>
+          <p>Create simple layout sketches to plan content structure and interface navigation.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col  text-dark" data-aos="fade-up">
+      <div class="p-4 shadow-sm rounded-4 bg-white h-100 d-flex">
+        <div class="me-3 fs-2 text-success">🧪</div>
+        <div>
+          <h5>3. Prototyping</h5>
+          <p>Design clickable interactive models to demonstrate user flow and interactions.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col  text-dark" data-aos="fade-up">
+      <div class="p-4 shadow-sm rounded-4 bg-white h-100 d-flex">
+        <div class="me-3 fs-2 text-warning">🧠</div>
+        <div>
+          <h5>4. Usability Testing</h5>
+          <p>Gather user feedback by testing prototypes to identify pain points and improve UX.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col  text-dark" data-aos="fade-up">
+      <div class="p-4 shadow-sm rounded-4 bg-white h-100 d-flex">
+        <div class="me-3 fs-2 text-danger">🚀</div>
+        <div>
+          <h5>5. Implementation</h5>
+          <p>Collaborate with developers to convert design into live product interfaces.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col  text-dark" data-aos="fade-up">
+      <div class="p-4 shadow-sm rounded-4 bg-white h-100 d-flex">
+        <div class="me-3 fs-2 text-secondary">🔁</div>
+        <div>
+          <h5>6. Feedback & Improvement</h5>
+          <p>Refine design based on post-launch analytics and continuous user input.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+       <!-- Section: Helpful Videos, Docs, Resources -->
+<section class="container text-white my-5">
+  <div class="row g-4">
+
+    <!-- Helpful Videos -->
+    <div class="col-md-4">
+      <div class="p-4 bg-dark rounded-4 shadow-sm h-100 hover-glow">
+        <h4 class="mb-3 text-info">🎥 Helpful Videos</h4>
+        <ul class="list-unstyled">
+          <li><a href="https://youtu.be/c9Wg6Cb_YlU" target="_blank" class="custom-link">FreeCodeCamp - UI/UX Full Course</a></li>
+          <li><a href="https://youtu.be/c9Wg6Cb_YlU" target="_blank" class="custom-link">Figma Tutorial for UI Design</a></li>
+          <li><a href="https://www.youtube.com/watch?v=Ovj4hFxko7c" target="_blank" class="custom-link">AJ&Smart - What is UI/UX?</a></li>
+          <li><a href="https://www.youtube.com/watch?v=FTFaQWZBqQ8" target="_blank" class="custom-link">Figma for Beginners</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Documentation -->
+    <div class="col-md-4">
+      <div class="p-4 bg-dark rounded-4 shadow-sm h-100 hover-glow">
+        <h4 class="mb-3 text-success">📚 Documentation</h4>
+        <ul class="list-unstyled">
+          <li><a href="https://help.figma.com/" target="_blank" class="custom-link">Figma Docs</a></li>
+          <li><a href="https://helpx.adobe.com/xd/user-guide.html" target="_blank" class="custom-link">Adobe XD Docs</a></li>
+          <li><a href="https://www.sketch.com/docs/" target="_blank" class="custom-link">Sketch Docs</a></li>
+          <li><a href="https://www.nngroup.com/articles/ux-process/" target="_blank" class="custom-link">NNG UX Process</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Resources -->
+    <div class="col-md-4">
+      <div class="p-4 bg-dark rounded-4 shadow-sm h-100 hover-glow">
+        <h4 class="mb-3 text-warning">🔗 Resources</h4>
+        <ul class="list-unstyled">
+          <li><a href="https://www.figma.com" target="_blank" class="custom-link">Figma Official Site</a></li>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms" target="_blank" class="custom-link">MDN on UI Design</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</div>
 
     <!-- Footer will be inserted here -->
     <div id="footer"></div>
@@ -24,7 +328,12 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
      <!-- Custom JS -->
-    <script src="script.js"></script>
-
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    
+    
 </body>
 </html>

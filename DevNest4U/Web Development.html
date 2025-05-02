@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Web Dev</title>
      <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
      <!-- Font Awesome & Bootstrap Icons -->
@@ -11,6 +11,18 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
      <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
+    <!-- Standard Favicon -->
+    <link rel="icon" type="image/png" href="favicon/favicon.ico">
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <!-- AOS library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
     <style>
         body {
             background-color: #f8f9fa;
@@ -19,14 +31,23 @@
             margin: 10px 0;
         }
         
+        .carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 50%;
+}
+html {
+  overflow-x: hidden;
+}
+
     </style>
 </head>
 <body>
-    <!-- Navbar will be inserted here -->
+   
+    <!-- Navbar -->
     <div id="navbar"></div>
      <!-- Main Content -->
     <div class="container my-5">
-        <h2 class="text-center fw-bold">Web Development Overview</h2>
+        <h2 class="text-center fw-bold" data-aos="fade-up">Web Development Overview</h2>
         <p class="text-center"><span class="highlight-text">A complete guide to build websites and applications.</span></p>
         
         <!-- Bootstrap Carousel -->
@@ -151,13 +172,19 @@
             </button>
         </div>
     </div>
-
+<!-- 
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#webDevCarousel" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#webDevCarousel" data-bs-slide-to="1"></button>
+        ...
+      </div> -->
+      
 <!--section two-->
     <div class="container mt-5 pt-5">
-        <h2 class="text-center fw-bold mb-4">Web Development Info Hub</h2>
+        <h2 class="text-center fw-bold mb-4" data-aos="fade-up">Web Development Info Hub</h2>
         <div class="row align-items-center">
             <!-- Text Content -->
-            <div class="col-lg-6">
+            <div class="col-lg-6" data-aos="fade-left">
                 <h3 class="fw-bold text-primary">Why Learn Web Development?</h3>
                 <p class="text-light">Web development enables you to build websites, applications, and digital experiences that power businesses and enhance online interactions.</p>
                 <ul class="list-unstyled">
@@ -174,7 +201,7 @@
             </div>
     
             <!-- Image -->
-            <div class="col-lg-6 text-center">
+            <div class="col-lg-6 text-center" data-aos="fade-right">
                 <img src="images/programming-background-collage.jpg" class="img-fluid rounded shadow" alt="Web Development">
             </div>
         </div>
@@ -188,24 +215,27 @@
             </div>
         </div>-->
     </div>
-    <!--section-----3-->
-    <div class="container my-4">
+    <div class="container my-4" data-aos="fade-down">
         <h2 class="text-center">🌐 Web Development Learning Resources</h2>
-
-    <!-- Frontend Section -->
-         
-        <h3 class="mt-4">🎨 Frontend Development</h3>
-        <div class="bg-opacity-10 text-light p-3 rounded mb-3">
-            <ul class="mb-0">
-              <li>Creates the visual part of the website</li>
-              <li>Uses HTML, CSS, and JavaScript</li>
-              <li>Ensures responsiveness across devices</li>
-              <li>Handles interactivity and layout</li>
-            </ul>
+        <div class="d-flex justify-content-center align-items-center my-3">
+            <img src="images/web___.png" class="img-fluid rounded shadow" alt="Web Development">
         </div>
+    
+        <!-- Two Column Layout for Frontend & Backend -->
         <div class="row">
-            <div class="col-md-6">
-                <div class="card">
+            <!-- Frontend Development Column -->
+            <div class="col-md-6" data-aos="fade-left">
+                <h3 class="mt-4">🎨 Frontend Development</h3>
+                <div class="bg-opacity-10 p-3 rounded mb-3">
+                    <ul class="mb-0">
+                        <li>Creates the visual part of the website</li>
+                        <li>Uses HTML, CSS, and JavaScript</li>
+                        <li>Ensures responsiveness across devices</li>
+                        <li>Handles interactivity and layout</li>
+                    </ul>
+                </div>
+    
+                <div class="card mb-3" data-aos="fade-left">
                     <div class="card-body">
                         <h5 class="card-title">HTML & CSS Basics</h5>
                         <p class="card-text">Learn HTML & CSS from scratch.</p>
@@ -213,10 +243,8 @@
                         <a href="https://www.freecodecamp.org/learn/responsive-web-design/" class="btn btn-success" target="_blank">Free Course</a>
                     </div>
                 </div>
-            </div>
-
-            <div class="col-md-6">
-                <div class="card">
+    
+                <div class="card mb-3" data-aos="fade-left">
                     <div class="card-body">
                         <h5 class="card-title">JavaScript Essentials</h5>
                         <p class="card-text">Learn JavaScript step by step.</p>
@@ -225,21 +253,20 @@
                     </div>
                 </div>
             </div>
-        </div>
-
-        <!-- Backend Section -->
-        <h3 class="mt-4">🖥️ Backend Development</h3>
-        <div class="bg-opacity-10 text-light p-3 rounded mb-3">
-            <ul class="mb-0">
-              <li>Runs the server-side logic and handles databases</li>
-              <li>Securely manages user data and authentication</li>
-              <li>Serves dynamic content via APIs</li>
-              <li>Built with Python, Node.js, or other backend tech</li>
-            </ul>
-          </div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="card">
+    
+            <!-- Backend Development Column -->
+            <div class="col-md-6" data-aos="fade-right">
+                <h3 class="mt-4">🖥️ Backend Development</h3>
+                <div class="bg-opacity-10 p-3 rounded mb-3">
+                    <ul class="mb-0">
+                        <li>Runs the server-side logic and handles databases</li>
+                        <li>Securely manages user data and authentication</li>
+                        <li>Serves dynamic content via APIs</li>
+                        <li>Built with Python, Node.js, or other backend tech</li>
+                    </ul>
+                </div>
+    
+                <div class="card mb-3" data-aos="fade-right">
                     <div class="card-body">
                         <h5 class="card-title">Node.js for Beginners</h5>
                         <p class="card-text">Learn the basics of Node.js.</p>
@@ -247,10 +274,8 @@
                         <a href="https://nodejs.org/en/docs/" class="btn btn-success" target="_blank">Official Docs</a>
                     </div>
                 </div>
-            </div>
-
-            <div class="col-md-6">
-                <div class="card">
+    
+                <div class="card mb-3" data-aos="fade-right">
                     <div class="card-body">
                         <h5 class="card-title">Django Full Course</h5>
                         <p class="card-text">Master Django for backend development.</p>
@@ -261,12 +286,13 @@
             </div>
         </div>
     </div>
+    
     <div class="container my-5">
-        <h2 class="text-center fw-bold">🌐 Full-Stack Web Development Resources</h2>
+        <h2 class="text-center fw-bold" data-aos="fade-up">🌐 Full-Stack Web Development Resources</h2>
     
         <!-- Full-Stack YouTube Playlists -->
         <div class="row mt-4">
-            <div class="col-md-6">
+            <div class="col-md-6" data-aos="fade-left">
                 <div class="card p-3">
                     <h5>MERN Stack Full Course (7 Hours)</h5>
                     <iframe width="100%" height="250" src="https://www.youtube.com/embed/mrHNSanmqQ4" frameborder="0" allowfullscreen></iframe>
@@ -275,7 +301,7 @@
             </div>
     
             <div class="col-md-6">
-                <div class="card p-3">
+                <div class="card p-3" data-aos="fade-right">
                     <h5>Full-Stack Web Development (10 Hours)</h5>
                     <iframe width="100%" height="250" src="https://www.youtube.com/embed/nu_pCVPKzTk" frameborder="0" allowfullscreen></iframe>
                     <a href="https://www.youtube.com/watch?v=nu_pCVPKzTk" class="btn btn-primary mt-2" target="_blank">Watch on YouTube</a>
@@ -286,7 +312,7 @@
         <!-- Free Full-Stack Courses -->
         <h3 class="mt-5">🎓 Free Full-Stack Development Courses</h3>
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4" data-aos="fade-left">
                 <div class="card p-3">
                     <h5>Full-Stack Web Development (freeCodeCamp)</h5>
                     <p>Learn full-stack development for free with hands-on coding.</p>
@@ -295,7 +321,7 @@
                 </div>
             </div>
             
-            <div class="col-md-4">
+            <div class="col-md-4" data-aos="fade-up">
                 <div class="card p-3">
                     <h5>Harvard CS50’s Web Programming</h5>
                     <h6>(With python and JavaScript)</h6>
@@ -305,7 +331,7 @@
                 </div>
             </div>
     
-            <div class="col-md-4">
+            <div class="col-md-4" data-aos="fade-right">
                 <div class="card p-3">
                     <h5>Full-Stack Open (University of Helsinki)</h5>
                     <p>Master React, Node.js, and databases with real-world projects.</p>
@@ -318,7 +344,7 @@
        <!-- Paid Full-Stack Courses -->
     <h3 class="mt-5">💰 Paid Full-Stack Development Courses (With Certificates)</h3>
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6" data-aos="fade-left">
             <div class="card p-3">
                 <h5>The Complete 2024 Web Development Bootcamp</h5>
                 <p>Learn from Angela Yu, one of the best web development instructors.</p>
@@ -326,7 +352,7 @@
             </div>
         </div>
         
-        <div class="col-md-6">
+        <div class="col-md-6" data-aos="fade-right">
             <div class="card p-3">
                 <h5>Frontend Masters Full-Stack Developer Path</h5>
                 <p>Advanced full-stack learning with hands-on projects.</p>
@@ -337,8 +363,8 @@
         </div>
     
         <!-- Official Documentation -->
-        <h3 class="mt-5 ps-5">📜 Official Documentation</h3>
-        <ul class="px-3 py-3 ps-5">
+        <h3 class="mt-5 ps-5" data-aos="fade-up">📜 Official Documentation</h3>
+        <ul class="px-3 py-3 ps-5" data-aos="fade-down">
             <li><a href="https://developer.mozilla.org/en-US/" target="_blank">HTML & CSS (MDN Docs)</a></li>
             <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">JavaScript (MDN Docs)</a></li>
             <li><a href="https://react.dev/" target="_blank">React.js (Official Docs)</a></li>
@@ -347,18 +373,43 @@
             <li><a href="https://dev.mysql.com/doc/" target="_blank">MySQL (Official Docs)</a></li>
         </ul>
     </div>
-    
-
+     
     <!-- Footer will be inserted here -->
     <div id="footer"></div>
      <!-- Bootstrap JS Bundle (Includes Popper.js) -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <!-- Bootstrap JS Bundle (includes Popper.js) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
+    
     <!-- Custom JS -->
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script>
+        fetch('navbar.html')
+          .then(res => res.text())
+          .then(data => {
+            document.getElementById('navbar').innerHTML = data;
+      
+            // Re-run the theme JS once navbar is loaded
+            const themeToggle = document.getElementById('themeToggle');
+            if (themeToggle) {
+              const isDark = localStorage.getItem('theme') === 'dark';
+              document.body.classList.toggle('dark-theme', isDark);
+              themeToggle.checked = isDark;
+      
+              themeToggle.addEventListener('change', () => {
+                const isDarkMode = themeToggle.checked;
+                document.body.classList.toggle('dark-theme', isDarkMode);
+                localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+              });
+            }
+          });
+      </script>
+      
 
 </body>
 </html>

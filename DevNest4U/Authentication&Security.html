@@ -3,19 +3,456 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Auth & Security</title>
      <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
      <!-- Font Awesome & Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
      <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
+    <!-- Standard Favicon -->
+    <link rel="icon" type="image/png" href="favicon/favicon.ico">
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+
+    <!-- Web App Manifest (Optional) -->
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <!-- Styles -->
+<style>
+    #authSecurity .hover-glow {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    #authSecurity .hover-glow:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 12px rgba(13, 202, 240, 0.6);
+    }
+
+    html {
+  overflow-x: hidden;
+}
+
+</style>
 </head>
 <body>
     <!-- Navbar will be inserted here -->
     <div id="navbar"></div>
-    
+    <!-- PART 1: Authentication & Security Introduction -->
+<section class="py-5 text-light" style="background-color: #121212;" id="authSecurityIntro">
+    <div class="container">
+        <h2 class="text-primary text-center fw-bold mb-4" data-aos="fade-down">
+            🔒 Intro to Authentication & Web Security
+        </h2>
+      <p class="text-center fs-5">
+        <strong>Authentication</strong> confirms <em>who you are</em>, while <strong>Security</strong> protects <em>what you have</em>.
+        Together, they ensure safe access to systems, data protection, and trustworthy web interactions.
+      </p>
+  
+      <div class="row text-center mt-4">
+        <div class="col-md-6">
+          <div class="p-4 bg-dark rounded-4 border-start border-4 border-info shadow">
+            <h4 class="text-info">Why Authentication?</h4>
+            <p>Helps verify user identity and ensures that access is granted only to legitimate users.</p>
+          </div>
+        </div>
+        <div class="col-md-6 mt-4 mt-md-0">
+          <div class="p-4 bg-dark rounded-4 border-start border-4 border-warning shadow">
+            <h4 class="text-warning">Why Security?</h4>
+            <p>Protects your data and system resources from unauthorized access and breaches.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<!-- AUTHENTICATION & SECURITY SECTION -->
+<section id="authSecurity" class="py-5 text-light" style="background-color: #111111;">
+    <div class="container">
+      
+      <!-- 🔐 MAIN HEADING -->
+      <h2 class="text-primary text-center fw-bold mb-4" data-aos="fade-down">
+        🔧 Implementing Authentication & Security
+        </h2>
+        <p class="text-center text-light mb-4">
+            This section helps you implement key authentication and security practices in your web applications. 
+            Click on any card below to explore trusted articles, tools, and documentation on each topic — from verifying identities to securing sessions and data.
+        </p>
+        
+      <!-- ✨ INFO MESSAGE FOR USERS -->
+      <p class="text-center text-info fs-5 mb-4" data-aos="fade-up">
+        📎 Click on the cards below to explore detailed articles and documentation for each topic.
+      </p>
+  
+      <!-- 🔗 CLICKABLE CARDS -->
+      <div class="row row-cols-1 row-cols-md-4 g-4 mb-5">
+        
+        <!-- CARD 1 -->
+        <div class="col" data-aos="zoom-in">
+          <a href="https://developer.mozilla.org/en-US/docs/Web/Security/Authentication" target="_blank" class="text-decoration-none">
+            <div class="card bg-dark text-light h-100 text-center border-info p-3 hover-glow">
+              <div class="card-body">
+                <i class="bi bi-person-lock fs-1 mb-3"></i>
+                <h5 class="fw-bold">Authentication</h5>
+                <p class="card-text">Learn how user identity is verified.</p>
+              </div>
+            </div>
+          </a>
+        </div>
+  
+        <!-- CARD 2 -->
+        <div class="col" data-aos="zoom-in" data-aos-delay="100">
+          <a href="https://developer.mozilla.org/en-US/docs/Web/Security" target="_blank" class="text-decoration-none">
+            <div class="card bg-dark text-light h-100 text-center border-success p-3 hover-glow">
+              <div class="card-body">
+                <i class="bi bi-shield-check fs-1 mb-3"></i>
+                <h5 class="fw-bold">Web Security</h5>
+                <p class="card-text">Explore web security basics & HTTPS.</p>
+              </div>
+            </div>
+          </a>
+        </div>
+  
+        <!-- CARD 3 -->
+        <div class="col" data-aos="zoom-in" data-aos-delay="200">
+          <a href="https://jwt.io/introduction" target="_blank" class="text-decoration-none">
+            <div class="card bg-dark text-light h-100 text-center border-warning p-3 hover-glow">
+              <div class="card-body">
+                <i class="bi bi-key-fill fs-1 mb-3"></i>
+                <h5 class="fw-bold">JWT</h5>
+                <p class="card-text">Understand secure tokens & sessions.</p>
+              </div>
+            </div>
+          </a>
+        </div>
+  
+        <!-- CARD 4 -->
+        <div class="col" data-aos="zoom-in" data-aos-delay="300">
+          <a href="https://firebase.google.com/products/auth" target="_blank" class="text-decoration-none">
+            <div class="card bg-dark text-light h-100 text-center border-danger p-3 hover-glow">
+              <div class="card-body">
+                <i class="bi bi-fingerprint fs-1 mb-3"></i>
+                <h5 class="fw-bold">Firebase Auth</h5>
+                <p class="card-text">Sign in users using Google, email, and more.</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+  
+         <!-- More Info -->
+    <div class="mt-5" data-aos="fade-up">
+        <h3 class="text-info mb-3">🔥 Firebase Authentication Overview</h3>
+        <p>
+          Firebase Authentication is a secure and easy-to-use identity solution that supports email/password, phone numbers, 
+          and third-party providers like Google, Facebook, and Twitter. It simplifies backend authentication and works well 
+          with Firebase Realtime Database or Firestore for protected access.
+        </p>
+        <ul>
+          <li>🔑 Supports anonymous, email/password, and federated identity login</li>
+          <li>📱 Perfect for mobile and web apps</li>
+          <li>🔒 Provides built-in protection for user sessions</li>
+        </ul>
+        <!-- <a href="https://firebase.google.com/docs/auth" class="btn btn-outline-warning mt-2" target="_blank">Official Firebase Docs</a> -->
+      </div>
+     
+      <div class="mt-5" data-aos="fade-up">
+        <h3 class="text-info mb-3">🧩 Steps to Implement Secure Authentication</h3>
+        <p>
+          Building a secure authentication system doesn’t have to be hard. Here’s a recommended approach using Firebase:
+        </p>
+        <ul>
+          <li>1️⃣ Choose an auth provider (Email, Google, etc.)</li>
+          <li>2️⃣ Configure Firebase Auth in the console</li>
+          <li>3️⃣ Use SDKs to integrate login in your frontend</li>
+          <li>4️⃣ Store authenticated session securely</li>
+          <li>5️⃣ Use Firestore rules to restrict access</li>
+        </ul>
+        <a href="https://firebase.google.com/docs/auth" class="btn btn-outline-warning mt-2" target="_blank">Firebase Auth Docs</a>
+      </div>
+  
+      <!-- 🔒 EXTRA SECTION: JSON / JWT -->
+      <div class="mt-5" data-aos="fade-up">
+        <h3 class="text-primary mb-3">🧾 What is JSON in Authentication?</h3>
+        <p>
+          JSON (JavaScript Object Notation) is the format behind JWTs (JSON Web Tokens) — lightweight tokens used to securely 
+          transmit information between parties. They’re compact, self-contained, and widely used in modern auth systems.
+        </p>
+        <ul>
+          <li>🔐 Encodes login info securely in a token</li>
+          <li>📦 Used in REST APIs for user verification</li>
+          <li>🌐 Works seamlessly across frontend & backend</li>
+        </ul>
+        <a href="https://jwt.io/introduction" class="btn btn-outline-info mt-2" target="_blank">Learn About JWT</a>
+      </div>
+  
+      <!-- 💡 TIP -->
+       <h3 class="mt-5 text-info"> Tip to get experience with Auth and security </h3>
+      <div class="mt-4" data-aos="fade-up">
+        💡 <em>Try building a login system with Firebase Auth + Firestore for a secure real-time experience.</em>
+      </div>
+  
+    </div>
+  </section>
+  
+<!-- Section 3: Best Practices for Secure Authentication -->
+<section class="container my-5" id="best-practices">
+    <h2 class="text-center text-primary mb-4" data-aos="fade-up">
+      🔒 Best Practices for Secure Authentication
+    </h2>
+    <p class="text-center text-light mb-5" data-aos="fade-up" data-aos-delay="100">
+      To maintain a secure environment, follow these recommended best practices when handling user authentication and sensitive data.
+    </p>
+  
+    <div class="row g-4 justify-content-center">
+      
+      <!-- Practice 1 -->
+      <div class="col-md-5 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="p-4 rounded-4 shadow text-center" style="background-color: #1e1e2f;">
+          <div class="mb-3 text-center fs-1">🔑</div>
+          <h5 class="text-info mb-2 text-center">Use Strong Password<br> Policies</h5>
+          <p>Enforce complexity rules and password length. Encourage the use of password managers.</p>
+          <div class="text-center mt-3">
+            <a href="https://developer.mozilla.org/en-US/docs/Web/Security/Strong_passwords" target="_blank" class="btn btn-outline-info btn-sm">Learn More</a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Practice 2 -->
+      <div class="col-md-5 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="p-4 rounded-4 shadow text-center" style="background-color: #1e1e2f;">
+          <div class="mb-3 text-center fs-1">🔐</div>
+          <h5 class="text-warning mb-2 text-center">Implement Two-Factor Authentication</h5>
+          <p>Add a second layer of verification using email, OTP, or apps like Google Authenticator.</p>
+          <div class="text-center mt-3">
+            <a href="https://auth0.com/docs/mfa" target="_blank" class="btn btn-outline-warning btn-sm">Learn More</a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Practice 3 -->
+      <div class="col-md-5 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+        <div class="p-4 rounded-4 shadow text-center " style="background-color: #1e1e2f;">
+          <div class="mb-3 text-center fs-1">🧊</div>
+          <h5 class="text-success mb-2 text-center">Hash Passwords <br> & Use Salting</h5>
+          <p>Never store plain text passwords.<br> Use hashing algorithms like bcrypt or Argon2.</p>
+          <div class="text-center mt-3">
+            <a href="https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html" target="_blank" class="btn btn-outline-success btn-sm">Learn More</a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Practice 4 -->
+      <div class="col-md-5 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+        <div class="p-4 rounded-4 shadow text-center" style="background-color: #1e1e2f;">
+          <div class="mb-3 text-center fs-1">🚫</div>
+          <h5 class="text-danger mb-2 text-center">Prevent Brute Force Attacks</h5>
+          <p>Limit login attempts, use CAPTCHA, and monitor login activity to detect abuse.</p>
+          <div class="text-center mt-3">
+            <a href="https://owasp.org/www-community/controls/Blocking_Brute_Force_Attacks" target="_blank" class="btn btn-outline-danger btn-sm">Learn More</a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Practice 5 -->
+      <div class="col-md-5 col-lg-4" data-aos="fade-up" data-aos-delay="600">
+        <div class="p-4 rounded-4 shadow text-center" style="background-color: #1e1e2f;">
+          <div class="mb-3 text-center fs-1">🛡️</div>
+          <h5 class="text-primary mb-2 text-center">Use HTTPS Everywhere</h5>
+          <p>Ensure all data is encrypted during transmission using SSL/TLS certificates.</p>
+          <div class="text-center mt-3">
+            <a href="https://letsencrypt.org/how-it-works/" target="_blank" class="btn btn-outline-primary btn-sm">Learn More</a>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  </section>
+
+  
+  <!-- Firebase YouTube Tutorials -->
+  <h3 class="text-center mt-5 text-info fw-bold" data-aos="fade-up" data-aos-delay="300">
+    🎥 Video Tutorials
+  </h3>
+<div class="mt-5">
+    <h3 class="text-success">📽️ Watch & Learn Firebase Authentication</h3>
+    <div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
+      <div class="col">
+        <div class="ratio ratio-16x9" data-aos="fade-right">
+          <iframe src="https://www.youtube.com/embed/PKwu15ldZ7k" title="Firebase Auth Explained" allowfullscreen></iframe>
+        </div>
+        <p class="text-light mt-2 text-center">🔥 Firebase Authentication Full Guide</p>
+      </div>
+      <div class="col">
+        <div class="ratio ratio-16x9" data-aos="fade-up">
+          <iframe src="https://www.youtube.com/embed/9kRgVxULbag" title="Email/Password Auth with Firebase" allowfullscreen></iframe>
+        </div>
+        <p class="text-light mt-2 text-center">📧 Email/Password Auth Setup</p>
+      </div>
+      <div class="col">
+        <div class="ratio ratio-16x9" data-aos="fade-left">
+            <iframe width="100%" height="215" src="https://www.youtube.com/embed/WpIDez53SK4" title="Google Auth Firebase React" frameborder="0" allowfullscreen></iframe>
+          <p class="text-white mt-2">🔐 Google Auth with Firebase (React.js Example)</p>
+        </div>
+        <p class="text-light mt-2 text-center">🔐 Google Auth with Firebase (React.js Example)</p>
+      </div>
+      
+    </div>
+  
+     <!-- Bonus Video: Fireship Firebase Auth Course -->
+  <div class="text-center mt-5" data-aos="fade-up">
+    <h4 class="text-info mb-3">🎓 Firebase Authentication Course by FreeCodeCamp</h4>
+    <div class="ratio ratio-16x9 mx-auto" style="max-width: 500px;">
+      <iframe src="https://www.youtube.com/embed/fgdpvwEWJ9M" title="Firebase Authentication Course - Fireship" allowfullscreen></iframe>
+    </div>
+    <p class="text-light mt-2">📚 Quick, modern, and developer-friendly Firebase Auth course.</p>
+  </div>
+</div>
+</div>
+  <!-- Section 4: Firebase Authentication Deep Dive -->
+
+<div class="container  my-5">
+    <h2 class="text-center text-primary mb-4">
+      🔥 <strong>Firebase Authentication Deep Dive</strong>
+    </h2>
+    <p class="text-center text-light mb-5">
+      Dive into Firebase Authentication – learn how it works, what methods are supported, and how to set up your app securely.
+    </p>
+  
+    <div class="row g-4 text-center">
+      <!-- Email/Password -->
+      <div class="col-md-6 col-lg-3" data-aos="fade-up">
+        <div class="card h-100 border border-info rounded-4 p-3 bg-dark text-light shadow-sm">
+          <div class="card-body">
+            <i class="fas fa-envelope fa-2x text-info mb-3"></i>
+            <h5 class="card-title text-info">Email/Password</h5>
+            <p class="card-text">Classic method where users register using their email and a secure password. Easy to implement with Firebase.</p>
+            <a href="https://firebase.google.com/docs/auth/web/password-auth" target="_blank" class="btn btn-outline-info mt-3">Learn More</a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Google Sign-In -->
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+        <div class="card h-100 border border-success rounded-4 p-3 bg-dark text-light shadow-sm">
+          <div class="card-body">
+            <i class="fab fa-google fa-2x text-success mb-3"></i>
+            <h5 class="card-title text-success">Google Sign-In</h5>
+            <p class="card-text">Let users sign in <br> with their Google account securely. Firebase handles OAuth2 authentication seamlessly.</p>
+            <a href="https://firebase.google.com/docs/auth/web/google-signin" target="_blank" class="btn btn-outline-success mt-3">Learn More</a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Phone Auth -->
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+        <div class="card h-100 border border-warning rounded-4 p-3 bg-dark text-light shadow-sm">
+          <div class="card-body">
+            <i class="fas fa-mobile-alt fa-2x text-warning mb-3"></i>
+            <h5 class="card-title text-warning">Phone Auth</h5>
+            <p class="card-text">Send OTP to <br> users' phone numbers and verify them without a password. Useful in mobile-first apps.</p>
+            <a href="https://firebase.google.com/docs/auth/web/phone-auth" target="_blank" class="btn btn-outline-warning mt-3">Learn More</a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Auth State Management -->
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+        <div class="card h-100 border border-danger rounded-4 p-3 bg-dark text-light shadow-sm">
+          <div class="card-body">
+            <i class="fas fa-user-shield fa-2x text-danger mb-3"></i>
+            <h5 class="card-title text-danger">Auth State Management</h5>
+            <p class="card-text">Track user's sign-in/out state in real time and update your UI accordingly with Firebase Auth listener.</p>
+            <a href="https://firebase.google.com/docs/auth/web/manage-users" target="_blank" class="btn btn-outline-danger mt-3">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+<!-- Real-World Use Cases Section -->
+<div class="container my-5">
+    <h2 class="text-center text-info mb-4">
+      <i class="fas fa-globe"></i> Real-World Use Cases of Firebase Authentication
+    </h2>
+    <p class="text-center text-light mb-5">
+      Explore how Firebase Authentication is used across real-world apps to streamline secure login, manage users, and protect sensitive data.
+    </p>
+  
+    <div class="row g-4">
+      <!-- Use Case 1 -->
+      <div class="col-md-6 col-lg-4" data-aos="zoom-in">
+        <div class="card bg-dark text-white shadow-lg border border-info rounded-4 h-100">
+          <div class="card-body">
+            <h5 class="card-title text-info"><i class="fas fa-shopping-cart me-2"></i>E-commerce Platforms</h5>
+            <p class="card-text">Used for secure login, OTP verification during checkout, and role-based access for users/admins.</p>
+            <a href="https://firebase.google.com/docs/auth/web/start" target="_blank" class="btn btn-outline-info btn-sm">Explore Docs</a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Use Case 2 -->
+      <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+        <div class="card bg-dark text-white shadow-lg border border-success rounded-4 h-100">
+          <div class="card-body">
+            <h5 class="card-title text-success"><i class="fas fa-user-graduate me-2"></i>EdTech Applications</h5>
+            <p class="card-text">Used in online learning platforms to authenticate students, track sessions, and manage content access.</p>
+            <a href="https://firebase.google.com/docs/auth/web/manage-users" target="_blank" class="btn btn-outline-success btn-sm">Learn More</a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Use Case 3 -->
+      <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+        <div class="card bg-dark text-white shadow-lg border border-warning rounded-4 h-100">
+          <div class="card-body">
+            <h5 class="card-title text-warning"><i class="fas fa-hospital-user me-2"></i>Health & Fitness Apps</h5>
+            <p class="card-text">Used for managing user health profiles, securely syncing data, and controlling data access with security rules.</p>
+            <a href="https://firebase.google.com/docs/auth" target="_blank" class="btn btn-outline-warning btn-sm">Firebase Auth Guide</a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Use Case 4 -->
+      <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
+        <div class="card bg-dark text-white shadow-lg border border-danger rounded-4 h-100">
+          <div class="card-body">
+            <h5 class="card-title text-danger"><i class="fas fa-comments me-2"></i>Chat & Social Media Apps</h5>
+            <p class="card-text">Used to handle user identities, allow Google sign-ins, and protect chats using Firebase security rules.</p>
+            <a href="https://firebase.google.com/docs/auth/web/google-signin" target="_blank" class="btn btn-outline-danger btn-sm">See Example</a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Use Case 5 -->
+      <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="400">
+        <div class="card bg-dark text-white shadow-lg border border-primary rounded-4 h-100">
+          <div class="card-body">
+            <h5 class="card-title text-primary"><i class="fas fa-hand-holding-usd me-2"></i>Digital Wallets & Fintech</h5>
+            <p class="card-text">Phone authentication is commonly used here for secure login and transaction validation.</p>
+            <a href="https://firebase.google.com/docs/auth/web/phone-auth" target="_blank" class="btn btn-outline-primary btn-sm">Read More</a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Use Case 6 -->
+      <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="500">
+        <div class="card bg-dark text-white shadow-lg border border-secondary rounded-4 h-100">
+          <div class="card-body">
+            <h5 class="card-title text-secondary"><i class="fas fa-tasks me-2"></i>Task Management Tools</h5>
+            <p class="card-text">Enables teams to manage accounts, collaborate securely, and control permissions for multiple roles.</p>
+            <a href="https://firebase.google.com/docs/auth/web/custom-auth" target="_blank" class="btn btn-outline-secondary btn-sm">Custom Auth</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</section>
+
 
 
     <!-- Footer will be inserted here -->
@@ -24,7 +461,22 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
      <!-- Custom JS -->
-    <script src="script.js"></script>
-
+    <script src="js/script.js"></script>
+    <!-- AOS Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        AOS.init();
+    });
+    </script>
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href'))
+                    .scrollIntoView({ behavior: 'smooth' });
+          });
+        });
+      </script>
 </body>
 </html>

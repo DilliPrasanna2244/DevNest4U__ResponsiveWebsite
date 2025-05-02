@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Git Version Control</title>
      <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
      <!-- Font Awesome & Bootstrap Icons -->
@@ -11,21 +11,601 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
      <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Standard Favicon -->
+    <link rel="icon" type="image/png" href="favicon/favicon.ico">
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+
+    <!-- Web App Manifest (Optional) -->
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <style>
+   .timeline-container {
+  position: relative;
+  max-width: 1000px;
+  margin: auto;
+  padding: 40px 0;
+}
+
+.timeline-item {
+  padding: 20px 40px;
+  position: relative;
+  width: 50%;
+}
+
+.timeline-item.left {
+  left: 0;
+}
+
+.timeline-item.right {
+  left: 50%;
+}
+
+.timeline-item::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  width: 20px;
+  height: 20px;
+  background-color: #ffc107;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.timeline-item.left::after {
+  right: -10px;
+}
+
+.timeline-item.right::after {
+  left: -10px;
+}
+
+.timeline-icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.timeline-content {
+  background: #222;
+  color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+  background: #333;
+}
+
+@media screen and (max-width: 768px) {
+  .timeline-item,
+  .timeline-item.left,
+  .timeline-item.right {
+    width: 100%;
+    left: 0 !important;
+    margin-bottom: 2rem;
+  }
+
+  .timeline-item::after {
+    left: calc(50% - 10px);
+  }
+}
+
+html {
+  overflow-x: hidden;
+}
+
+
+    </style>
 </head>
 <body>
-     
+
+     <!-- Navbar -->
+    <div id="navbar"></div>
+
+    <!-- Version Control Introduction Section -->
+<section id="version-control-intro" class="py-5 text-light bg-dark">
+    <div class="container">
+      <h2 class="text-center mb-4" data-aos="fade-up">🧠 Introduction to Version Control</h2>
+      <p class="text-center mb-4" data-aos="fade-up" data-aos-delay="100">
+        Keep track of code changes, collaborate with your team, and never lose progress again – all with version control!
+      </p>
+  
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-4" data-aos="fade-right">
+          <h4>📌 What is Version Control?</h4>
+          <p>
+            Version control is a system that helps developers manage and track changes to source code over time. It allows multiple people to collaborate on a project, roll back to previous versions, and avoid conflicts in code.
+          </p>
+          <h4>💡 Why It's Important</h4>
+          <ul>
+            <li>✔️ Track every change made to the codebase</li>
+            <li>✔️ Collaborate with multiple developers without confusion</li>
+            <li>✔️ Revert back to a stable version if something breaks</li>
+            <li>✔️ Experiment safely using branches</li>
+          </ul>
+        </div>
+  
+        <div class="col-lg-6 text-center" data-aos="fade-left">
+          <img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png" alt="Git Logo" class="img-fluid" style="max-width: 200px;">
+          <p class="mt-3">
+            <a href="https://git-scm.com/" target="_blank" class="btn btn-outline-light btn-sm mt-2">
+              🌐 Learn More About Git
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Version Control Timeline Section -->
+
+  <section class="py-5 text-light" id="version-timeline">
+    <div class="container">
+      <h3 class="text-center mb-4" data-aos="fade-up">🧭 Version Control Flow – Step-by-Step Timeline</h3>
+  
+      <div class="timeline-container">
+        <!-- Step 1 -->
+        <div class="timeline-item left" data-aos="fade-right">
+          <div class="timeline-icon">📁</div>
+          <div class="timeline-content">
+            <h5>Initialize Git Repository</h5>
+            <p>Start a Git repository in your local project using <code>git init</code>.</p>
+            <a href="https://git-scm.com/docs/git-init" target="_blank" class="btn btn-sm btn-outline-light mt-2">Read: git init →</a>
+          </div>
+        </div>
+  
+        <!-- Step 2 -->
+        <div class="timeline-item right" data-aos="fade-left">
+          <div class="timeline-icon">📥</div>
+          <div class="timeline-content">
+            <h5>Stage Changes</h5>
+            <p>Add changes to the staging area using <code>git add filename</code>.</p>
+            <a href="https://git-scm.com/docs/git-add" target="_blank" class="btn btn-sm btn-outline-light mt-2">Read: git add →</a>
+          </div>
+        </div>
+  
+        <!-- Step 3 -->
+        <div class="timeline-item left" data-aos="fade-right">
+          <div class="timeline-icon">📝</div>
+          <div class="timeline-content">
+            <h5>Commit Changes</h5>
+            <p>Record a snapshot of your code with a message using <code>git commit -m "message"</code>.</p>
+            <a href="https://git-scm.com/docs/git-commit" target="_blank" class="btn btn-sm btn-outline-light mt-2">Read: git commit →</a>
+          </div>
+        </div>
+  
+        <!-- Step 4 -->
+        <div class="timeline-item right" data-aos="fade-left">
+          <div class="timeline-icon">📤</div>
+          <div class="timeline-content">
+            <h5>Push to GitHub</h5>
+            <p>Upload your commits to a remote repo like GitHub using <code>git push origin main</code>.</p>
+            <a href="https://docs.github.com/en/get-started/quickstart" target="_blank" class="btn btn-sm btn-outline-light mt-2">Guide: Push to GitHub →</a>
+          </div>
+        </div>
+  
+        <!-- Step 5 -->
+        <div class="timeline-item left" data-aos="fade-right">
+          <div class="timeline-icon">🔄</div>
+          <div class="timeline-content">
+            <h5>Collaborate</h5>
+            <p>Others pull changes, create branches, and contribute via pull requests.</p>
+            <a href="https://docs.github.com/en/pull-requests" target="_blank" class="btn btn-sm btn-outline-light mt-2">GitHub Collaboration →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+<!-- Section 2: Git & GitHub Cheatsheet -->
+<section class="py-5 bg-dark text-light" id="git-cheatsheet">
+    <div class="container">
+      <h3 class="text-center mb-4" data-aos="fade-up">🧾 Git & GitHub Cheatsheet</h3>
+      <p class="text-center mb-5" data-aos="fade-up" data-aos-delay="100">
+        Handy commands every developer should know. Tap any card to reveal the command.
+      </p>
+  
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        
+        <!-- Init -->
+        <div class="col" data-aos="zoom-in">
+          <div class="card h-100 bg-black  text-light border-secondary rounded-4 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">🔧 Initialize Repository</h5>
+              <p class="card-text"><code>git init</code></p>
+              <a href="https://git-scm.com/docs/git-init" target="_blank" class="btn btn-sm btn-outline-light mt-2">Docs →</a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Clone -->
+        <div class="col" data-aos="zoom-in" data-aos-delay="100">
+          <div class="card h-100 bg-black  text-light border-secondary rounded-4 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">📥 Clone Repository</h5>
+              <p class="card-text"><code>git clone [URL]</code></p>
+              <a href="https://git-scm.com/docs/git-clone" target="_blank" class="btn btn-sm btn-outline-light mt-2">Docs →</a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Status -->
+        <div class="col" data-aos="zoom-in" data-aos-delay="200">
+          <div class="card h-100 bg-black  text-light border-secondary rounded-4 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">🔍 Check Status</h5>
+              <p class="card-text"><code>git status</code></p>
+              <a href="https://git-scm.com/docs/git-status" target="_blank" class="btn btn-sm btn-outline-light mt-2">Docs →</a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Add -->
+        <div class="col" data-aos="zoom-in">
+          <div class="card h-100 bg-black  text-light border-secondary rounded-4 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">➕ Add Files</h5>
+              <p class="card-text"><code>git add .</code> or <code>git add [filename]</code></p>
+              <a href="https://git-scm.com/docs/git-add" target="_blank" class="btn btn-sm btn-outline-light mt-2">Docs →</a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Commit -->
+        <div class="col" data-aos="zoom-in" data-aos-delay="100">
+          <div class="card h-100 bg-black  text-light border-secondary rounded-4 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">📝 Commit</h5>
+              <p class="card-text"><code>git commit -m "your message"</code></p>
+              <a href="https://git-scm.com/docs/git-commit" target="_blank" class="btn btn-sm btn-outline-light mt-2">Docs →</a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Push -->
+        <div class="col" data-aos="zoom-in" data-aos-delay="200">
+          <div class="card h-100 bg-black  text-light border-secondary rounded-4 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">🚀 Push to Remote</h5>
+              <p class="card-text"><code>git push origin main</code></p>
+              <a href="https://git-scm.com/docs/git-push" target="_blank" class="btn btn-sm btn-outline-light mt-2">Docs →</a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Pull -->
+        <div class="col" data-aos="zoom-in">
+          <div class="card h-100 bg-black  text-light border-secondary rounded-4 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">🔁 Pull Updates</h5>
+              <p class="card-text"><code>git pull</code></p>
+              <a href="https://git-scm.com/docs/git-pull" target="_blank" class="btn btn-sm btn-outline-light mt-2">Docs →</a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Log -->
+        <div class="col" data-aos="zoom-in" data-aos-delay="100">
+          <div class="card h-100 bg-black  text-light border-secondary rounded-4 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">📜 View Log</h5>
+              <p class="card-text"><code>git log</code></p>
+              <a href="https://git-scm.com/docs/git-log" target="_blank" class="btn btn-sm btn-outline-light mt-2">Docs →</a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Branch -->
+        <div class="col" data-aos="zoom-in" data-aos-delay="200">
+          <div class="card h-100 bg-black  text-light border-secondary rounded-4 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">🌿 Branching</h5>
+              <p class="card-text"><code>git branch</code> | <code>git checkout -b new-branch</code></p>
+              <a href="https://git-scm.com/docs/git-branch" target="_blank" class="btn btn-sm btn-outline-light mt-2">Docs →</a>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  
+  <section id="git-vs-github" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4" data-aos="fade-up">🔍 Git vs GitHub – Key Differences</h2>
+      <p class="text-center mb-4" data-aos="fade-up" data-aos-delay="100">
+        Understand the core differences between Git and GitHub with this comparison.
+      </p>
+  
+      <!-- Tab Switch Style -->
+      <div class="d-flex justify-content-center mb-4" data-aos="fade-up" data-aos-delay="200">
+        <button class="btn btn-outline-primary me-2 active" onclick="switchTab('git')">Git</button>
+        <button class="btn btn-outline-primary" onclick="switchTab('github')">GitHub</button>
+      </div>
+  
+      <div id="git" class="tab-content" data-aos="fade-up" data-aos-delay="300">
+        <h4>🐙 Git</h4>
+        <ul>
+          <li>Local Version Control System</li>
+          <li>Tracks code changes on your computer</li>
+          <li>Doesn’t require internet connection</li>
+          <li>CLI based tool (Command Line Interface)</li>
+          <li>Examples: <code>git init</code>, <code>git commit</code></li>
+        </ul>
+      </div>
+  
+      <div id="github" class="tab-content d-none" data-aos="fade-up" data-aos-delay="400">
+        <h4>☁️ GitHub</h4>
+        <ul>
+          <li>Cloud-based Hosting for Git Repositories</li>
+          <li>Collaboration tool for teams</li>
+          <li>Requires Internet to push/pull</li>
+          <li>Includes GUI and web interface</li>
+          <li>Examples: <code>git push origin main</code>, PRs, Issues</li>
+        </ul>
+      </div>
+  
+      <!-- Optional Table Version (visible on larger screens) -->
+      <div class="table-responsive mt-5" data-aos="fade-up" data-aos-delay="500">
+        <table class="table table-bordered table-striped">
+          <thead class="table-dark">
+            <tr>
+              <th>Feature</th>
+              <th>Git</th>
+              <th>GitHub</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Type</td>
+              <td>Version Control Tool</td>
+              <td>Cloud Platform for Git Repositories</td>
+            </tr>
+            <tr>
+              <td>Access</td>
+              <td>Local (Offline)</td>
+              <td>Online (Web-based)</td>
+            </tr>
+            <tr>
+              <td>Interface</td>
+              <td>Command Line Interface (CLI)</td>
+              <td>GUI + CLI + Web UI</td>
+            </tr>
+            <tr>
+              <td>Use Case</td>
+              <td>Track code changes, branching</td>
+              <td>Collaboration, code sharing, CI/CD</td>
+            </tr>
+            <tr>
+              <td>Examples</td>
+              <td><code>git init</code>, <code>git commit</code></td>
+              <td><code>git push</code>, Pull Requests, Actions</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Section 4: GitHub Repository Structure -->
+<section id="github-structure" class="py-5 text-light bg-dark">
+    <div class="container">
+      <h2 class="text-center mb-4" data-aos="fade-up">
+        <i class="bi bi-folder-fill me-2"></i>GitHub Repository Structure
+      </h2>
+      <p class="text-center mb-5" data-aos="fade-up" data-aos-delay="100">
+        Understand the layout of a typical GitHub project repository and what key files/folders are used.
+      </p>
+  
+      <div class="row align-items-center justify-content-center g-4">
+        <!-- Description Column -->
+        <div class="col-lg-6" data-aos="fade-right">
+          <ul class="list-group list-group-flush fs-6">
+            <li class="list-group-item bg-dark text-light border-secondary">
+              <strong>README.md</strong> – Contains project description, setup guide, and usage instructions.
+            </li>
+            <li class="list-group-item bg-dark text-light border-secondary">
+              <strong>.gitignore</strong> – Lists files/folders to be ignored by Git.
+            </li>
+            <li class="list-group-item bg-dark text-light border-secondary">
+              <strong>LICENSE</strong> – Specifies the license under which the code is distributed.
+            </li>
+            <li class="list-group-item bg-dark text-light border-secondary">
+              <strong>/src</strong> – Source code files reside here.
+            </li>
+            <li class="list-group-item bg-dark text-light border-secondary">
+              <strong>/public</strong> – Static files such as HTML, images, etc.
+            </li>
+          </ul>
+        </div>
+  
+        <!-- Image Column -->
+        <div class="col-lg-6 text-center" data-aos="fade-left">
+          <div class="card bg-dark border-secondary p-3 shadow-lg">
+            <h5 class="text-light mb-2">
+              <i class="bi bi-diagram-3-fill me-1"></i>Folder Structure
+              <a href="https://hashnode.com/" target="_blank" class="text-info fs-6 ms-1"><i class="bi bi-box-arrow-up-right"></i></a>
+            </h5>
+            <img src="images/gitflow.webp"
+              alt="GitHub Folder Structure" class="img-fluid rounded">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Section 5: Git Commands with Descriptions -->
+<section id="git-commands" class="py-5 bg-black text-light">
+    <div class="container">
+      <h2 class="text-center mb-4" data-aos="fade-up">
+        <i class="bi bi-terminal-fill me-2"></i>Most Used Git Commands
+      </h2>
+      <p class="text-center mb-5" data-aos="fade-up" data-aos-delay="100">
+        Here are the most frequently used Git commands every developer should know.
+      </p>
+  
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <!-- Command Card 1 -->
+        <div class="col" data-aos="fade-up" data-aos-delay="100">
+          <div class="card h-100 bg-dark text-light border-secondary">
+            <div class="card-body">
+              <h5 class="card-title"><i class="bi bi-arrow-repeat me-2"></i>git init</h5>
+              <p class="card-text">Initialize a new Git repository in your project directory.</p>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Command Card 2 -->
+        <div class="col" data-aos="fade-up" data-aos-delay="150">
+          <div class="card h-100 bg-dark text-light border-secondary">
+            <div class="card-body">
+              <h5 class="card-title"><i class="bi bi-box-arrow-down me-2"></i>git clone</h5>
+              <p class="card-text">Clone an existing repository from GitHub or another remote.</p>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Command Card 3 -->
+        <div class="col" data-aos="fade-up" data-aos-delay="200">
+          <div class="card h-100 bg-dark text-light border-secondary">
+            <div class="card-body">
+              <h5 class="card-title"><i class="bi bi-floppy me-2"></i>git add</h5>
+              <p class="card-text">Add files to the staging area before committing.</p>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Command Card 4 -->
+        <div class="col" data-aos="fade-up" data-aos-delay="250">
+          <div class="card h-100 bg-dark text-light border-secondary">
+            <div class="card-body">
+              <h5 class="card-title"><i class="bi bi-check2-square me-2"></i>git commit</h5>
+              <p class="card-text">Record changes to the repository with a message.</p>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Command Card 5 -->
+        <div class="col" data-aos="fade-up" data-aos-delay="300">
+          <div class="card h-100 bg-dark text-light border-secondary">
+            <div class="card-body">
+              <h5 class="card-title"><i class="bi bi-cloud-arrow-up me-2"></i>git push</h5>
+              <p class="card-text">Push local commits to the remote repository.</p>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Command Card 6 -->
+        <div class="col" data-aos="fade-up" data-aos-delay="350">
+          <div class="card h-100 bg-dark text-light border-secondary">
+            <div class="card-body">
+              <h5 class="card-title"><i class="bi bi-cloud-arrow-down me-2"></i>git pull</h5>
+              <p class="card-text">Fetch and merge changes from the remote repository.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Section 6: Video Tutorials and Resources -->
+<section id="vc-resources" class="py-5 text-light">
+    <div class="container">
+      <h2 class="text-center mb-4" data-aos="fade-up">
+        <i class="bi bi-journals me-2"></i>Videos, Articles & PDF Resources
+      </h2>
+      <p class="text-center mb-5" data-aos="fade-up" data-aos-delay="100">
+        Explore these top-rated videos and articles to master Git and GitHub effectively.
+      </p>
+  
+      <!-- YouTube Tutorials -->
+      <div class="row mb-5">
+        <div class="col-md-6" data-aos="zoom-in" data-aos-delay="100">
+          <div class="ratio ratio-16x9">
+            <iframe src="https://www.youtube.com/embed/apGV9Kg7ics" title="Git & GitHub Crash Course for Beginners" allowfullscreen></iframe>
+          </div>
+          <p class="mt-2 text-center">Git & GitHub Crash Course </p>
+        </div>
+        <div class="col-md-6" data-aos="zoom-in" data-aos-delay="200">
+          <div class="ratio ratio-16x9">
+            <iframe src="https://www.youtube.com/embed/RGOj5yH7evk" title="Git Tutorial for Beginners" allowfullscreen></iframe>
+          </div>
+          <p class="mt-2 text-center">GitHub Tutorial – freecodecamp</p>
+        </div>
+      </div>
+  
+      <!-- Articles / PDF Cards -->
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <!-- Article 1 -->
+        <div class="col" data-aos="fade-up" data-aos-delay="100">
+          <div class="card h-100 bg-dark text-light">
+            <div class="card-body">
+              <h5 class="card-title"><i class="bi bi-link-45deg me-2"></i>Git Handbook</h5>
+              <p class="card-text">Official Git Handbook from GitHub Docs.</p>
+              <a href="https://guides.github.com/introduction/git-handbook/" class="btn btn-outline-light btn-sm" target="_blank">Read Article</a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Article 2 -->
+        <div class="col" data-aos="fade-up" data-aos-delay="150">
+          <div class="card h-100 bg-dark text-light">
+            <div class="card-body">
+              <h5 class="card-title"><i class="bi bi-file-earmark-pdf me-2"></i>Git Cheat Sheet (PDF)</h5>
+              <p class="card-text">Official GitHub Git Commands Cheat Sheet (downloadable).</p>
+              <a href="https://education.github.com/git-cheat-sheet-education.pdf" class="btn btn-outline-light btn-sm" target="_blank">Download PDF</a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Article 3 -->
+        <div class="col" data-aos="fade-up" data-aos-delay="200">
+          <div class="card h-100 bg-dark text-light">
+            <div class="card-body">
+              <h5 class="card-title"><i class="bi bi-link-45deg me-2"></i>Atlassian Git Tutorials</h5>
+              <p class="card-text">A full collection of Git best practices and learning guides.</p>
+              <a href="https://www.atlassian.com/git/tutorials" class="btn btn-outline-light btn-sm" target="_blank">Visit Site</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+    
+    <!-- Footer will be inserted here -->
+    <div id="footer"></div>
      <!-- Bootstrap JS Bundle (Includes Popper.js) -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
      <!-- Custom JS -->
-    <script src="script.js"></script>
-    <div id="header"></div>
+    <script src="js/script.js"></script>
 
-    <!--<script>
-    fetch("header.html")
-        .then(response => response.text())
-        .then(data => document.getElementById("header").innerHTML = data);
-    </script>-->
-
+    <!-- AOS JS -->
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+        AOS.init({
+            duration: 800, // optional
+            // once: true,    // fade once
+        });
+        </script>
+    <!-- Tab Switch Script -->
+  <script>
+    function switchTab(tabId) {
+      document.getElementById('git').classList.add('d-none');
+      document.getElementById('github').classList.add('d-none');
+      document.querySelectorAll('button').forEach(btn => btn.classList.remove('active'));
+      
+      document.getElementById(tabId).classList.remove('d-none');
+      event.target.classList.add('active');
+    }
+  </script>
+  
 </body>
 </html>
